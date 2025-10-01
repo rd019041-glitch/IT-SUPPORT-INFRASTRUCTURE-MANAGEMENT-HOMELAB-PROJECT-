@@ -1,0 +1,2 @@
+# IT-SUPPORT-INFRASTRUCTURE-MANAGEMENT-HOMELAB-PROJECT-
+This project is a comprehensive home lab environment designed to simulate real-world IT Support and System Administration tasks following ITSM practices. It demonstrates the end-to-end setup, configuration, and management of an enterprise-like IT infrastructure, with a strong focus on identity management, security, automation, and troubleshooting.

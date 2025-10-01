@@ -921,6 +921,7 @@ Given the list of users, I will proceed to create 10 users with ADAC and 10 user
 
 To simulate a 'real' work environment, I'm going to create a ticket in Jira Service Management (JSM) representing a hypothetical request for user creation.
 
+<img width="1096" height="738" alt="image" src="https://github.com/user-attachments/assets/de137b38-dd5c-4680-b70c-d83db73730fc" />
 
 
 
@@ -929,9 +930,11 @@ To simulate a 'real' work environment, I'm going to create a ticket in Jira Serv
 
 I invited me through e-mail to join this project and assign tickets to myself.
 
+<img width="745" height="481" alt="image" src="https://github.com/user-attachments/assets/becde3f3-425b-4e04-b497-4505071b1d50" />
 
 
 
+<img width="704" height="646" alt="image" src="https://github.com/user-attachments/assets/8521cb29-e8c5-4f4c-8051-bab27f25deba" />
 
 
 
@@ -961,31 +964,39 @@ I invited me through e-mail to join this project and assign tickets to myself.
 
 Now, I will create the ticket that simulates the experience of receiving it, 'working on it', and resolving it.
 
+<img width="1042" height="586" alt="image" src="https://github.com/user-attachments/assets/4707da31-f4dc-46e7-bec1-8f27b6bcd299" />
 
 
 After simulating the ticket sent by Rahul Das (a user created by myself), I assign it to myself (indicating that I will handle the ticket) and start creating the users.
+<img width="1089" height="557" alt="image" src="https://github.com/user-attachments/assets/8683c667-871d-42f0-9d78-389508a7a0bf" />
 
 Finally, once the ticket is resolved (with all the users created), I get the following:
+<img width="1015" height="551" alt="image" src="https://github.com/user-attachments/assets/b04f4898-185a-42f8-8567-4a8623ec3c91" />
 
 
 
 
 Therefore, once I have created all the requested users, I can mark the ticket as resolved and additionally leave a message for the user who initiated it, indicating that all the users have been successfully created.
 
+<img width="1016" height="465" alt="image" src="https://github.com/user-attachments/assets/a249a2ea-38c9-4e1d-bc47-b4b8746ab5a8" />
 
 
 
 •	User creation through Azure Active Directory (currently Microsoft Entra ID)
 In addition to managing Active Directory on-premises, you can use the cloud version, which is Azure Active Directory, currently known as Microsoft Entra ID.
+<img width="1016" height="429" alt="image" src="https://github.com/user-attachments/assets/7cab5f67-ee04-4fbe-9f9f-c53f5df7cc5e" />
 
 To do this, I must first have my domain created (in this case, I created the domain Jobskillshare408.onmicrosoft.com).
 To create users, I go to the Users section and select New User -> Create New User:
+<img width="1016" height="531" alt="image" src="https://github.com/user-attachments/assets/4d594de9-35fa-4ea6-bdc8-85d1e1c4aa91" />
 
 
 Click Create a new user.
 
+<img width="905" height="427" alt="image" src="https://github.com/user-attachments/assets/413b5423-c105-4a88-a32e-5d0985e502cb" />
 
 
+<img width="923" height="460" alt="image" src="https://github.com/user-attachments/assets/4c84e605-fe6a-43f9-806c-997d9890fd5c" />
 
 
 
@@ -1006,6 +1017,7 @@ Click Create a new user.
 Finally, I check that all the fields have been filled in correctly:
 
 
+<img width="937" height="455" alt="image" src="https://github.com/user-attachments/assets/b51ecdf5-eaca-48fe-88b4-efa3dce4f736" />
 
 
 
@@ -1016,27 +1028,35 @@ Finally, I check that all the fields have been filled in correctly:
 
 
 If everything is correct, I press 'Create' to finish creating the user:
+<img width="1016" height="327" alt="image" src="https://github.com/user-attachments/assets/87d605e1-e2fa-4cee-b6ea-b36130429b62" />
 
 	Bulk user creation with Azure Active Directory using a .csv file
 To create multiple users at once, Azure Active Directory has a section that allows you to create multiple users based on an uploaded .csv file.
 To do this, I go to Bulk operations -> Bulk Creation and download the corresponding .csv.
+<img width="1016" height="373" alt="image" src="https://github.com/user-attachments/assets/ec975750-c464-4973-a2d5-b015ef15d041" />
 
 Then, I downloaded the sample csv file to create bulk user.
+<img width="1055" height="387" alt="image" src="https://github.com/user-attachments/assets/145a6655-ef03-431b-8c45-22f25590ebbd" />
 
 And this is the format.
+<img width="1078" height="196" alt="image" src="https://github.com/user-attachments/assets/8e100023-dae8-45cc-a6d9-229940f937b5" />
 
 Then I put the data of employees from the ticket. After that I Submitted the Csv file.
+<img width="1015" height="543" alt="image" src="https://github.com/user-attachments/assets/0cd07b4f-6d8e-4a28-ba7b-be6245f06b6c" />
 
 
 Once the .csv is downloaded, I fill in each column with the corresponding data, where each row will correspond to a particular user.
 Once the users are created, I get the following:
+<img width="814" height="362" alt="image" src="https://github.com/user-attachments/assets/2d7e3112-e3ce-4ea6-9ee8-5a53342bd754" />
 
 	Microsoft 365 User Creation
 Steps to follow to create users in Microsoft 365:
 First, I go to the Microsoft 365 Administration Center.
 Then, on the left panel, go to the Active Users section:
+<img width="1015" height="424" alt="image" src="https://github.com/user-attachments/assets/90acd844-0f15-4b13-b0f4-0a8c024ddb1f" />
 
 Then, I fill in the fields, indicating first name, last name, display name (which will appear in the list of active users) and the user name, with which the user will log in:
+<img width="1009" height="625" alt="image" src="https://github.com/user-attachments/assets/3579f286-14b4-42c7-ac1b-577fa29d04d9" />
 
 
 
@@ -1053,6 +1073,7 @@ Then, I fill in the fields, indicating first name, last name, display name (whic
 
 Here I have to assign a license to the user, because I don’t have any license so I clicked create user without product license.
 
+<img width="617" height="366" alt="image" src="https://github.com/user-attachments/assets/6265b22a-7659-4267-aa40-4bf9e454b2a5" />
 
 
 
@@ -1064,6 +1085,7 @@ Then, in the optional configuration section, you configure whether you want the 
 If so, you will choose what type of administrator user it is, such as: Helpdesk Administrator, Exchange Administrator, Teams Administrator or Global Administrator if you want to give unlimited access to all features:
 
 
+<img width="618" height="408" alt="image" src="https://github.com/user-attachments/assets/986cb520-e3ce-4488-9fae-9a943d0f55b4" />
 
 
 
@@ -1075,9 +1097,11 @@ Finally, it remains to confirm that all the data is correct and finish with the 
 
 
 
+<img width="614" height="433" alt="image" src="https://github.com/user-attachments/assets/a3419cca-9ad9-433c-bb8e-e5406dc47272" />
 
 
 
+<img width="777" height="441" alt="image" src="https://github.com/user-attachments/assets/303ddec5-eb98-48d2-b4e8-a6e0a82eaaa9" />
 
 
 
@@ -1102,6 +1126,7 @@ Once you understand the differences between each type of group, it is proper to 
 Steps to follow for the creation of groups in Microsoft 365:
 First, I go to the Microsoft 365 Administration Center.
 Then, on the left panel, go to the Active groups and teams’ section:
+<img width="1015" height="193" alt="image" src="https://github.com/user-attachments/assets/aa14fc87-ecbb-4ba4-9fc1-05c7bfed7126" />
 
 	Then, we fill in the following data:
 
@@ -1112,6 +1137,7 @@ Email (shared) of the group
 If the group is public or private
 If I want to connect Microsoft Teams to the group
 
+<img width="801" height="441" alt="image" src="https://github.com/user-attachments/assets/c1d54c1b-80b3-44cf-8bb3-74989a1fba19" />
 
 
 
@@ -1130,6 +1156,7 @@ If I want to connect Microsoft Teams to the group
 
 Now I have to quickly resolve the ticket with respect to SLA.
 
+<img width="834" height="498" alt="image" src="https://github.com/user-attachments/assets/46331f42-9fd7-4ae7-93b2-58ec0ae62322" />
 
 
 
@@ -1150,6 +1177,7 @@ Now I have to quickly resolve the ticket with respect to SLA.
 
 Then I Assign owners.
 
+<img width="598" height="348" alt="image" src="https://github.com/user-attachments/assets/72b58394-4fdc-449c-af63-c86d3f5887b8" />
 
 
 
@@ -1161,9 +1189,11 @@ Then I Assign owners.
 
 Then add the members.
 
+<img width="801" height="439" alt="image" src="https://github.com/user-attachments/assets/cc7f0073-a66b-47a9-a1f9-0c9fafd78c4f" />
 
 
 
+<img width="802" height="425" alt="image" src="https://github.com/user-attachments/assets/b8192b41-ab97-478d-83fb-afbdec12c6d8" />
 
 
 
@@ -1195,6 +1225,7 @@ Then add the members.
 Then I named the group and make it privet according to company policy regarding to the Graphic design department. After that I allow admin roles to be assign for this group.
 
 
+<img width="822" height="434" alt="image" src="https://github.com/user-attachments/assets/05431076-29c2-4f46-a26b-9666cff2b547" />
 
 
 
@@ -1211,6 +1242,7 @@ Then I named the group and make it privet according to company policy regarding 
 After creating all stuffs I review and check the final view , therefore clicked on create group.
 
 
+<img width="833" height="473" alt="image" src="https://github.com/user-attachments/assets/10d330c7-b97b-4060-a7d2-6e9ed342591a" />
 
 
 
@@ -1230,11 +1262,13 @@ After creating all stuffs I review and check the final view , therefore clicked 
 	Group Policy Management and              Implementation
 GPOs (Group Policy Objects) are a feature of Windows Server operating systems that allow administrators to centrally manage and configure policies and settings for systems and users in an Active Directory domain network.
 Basically, GPOs are collections of policy settings that can be applied to users and computers in an Active Directory-based network environment. These policies can cover a wide range of settings, from system security to user environment customization.
+<img width="811" height="511" alt="image" src="https://github.com/user-attachments/assets/d344bd47-57f7-492d-88a3-2f9f0a407e80" />
 
 There are some basic concepts of GPOs that need to be understood before starting to configure them:
 GPO (Group Policy Objects) linking
 GPOs must be linked to a container in Active Directory to be applied.
 Containers can be sites, domains or Organizational Units (OUs).
+<img width="1016" height="742" alt="image" src="https://github.com/user-attachments/assets/729f2449-eaa1-43c0-aa2e-4330aa3b6eba" />
 
 
 GPO Inheritance / Precedence
@@ -1249,6 +1283,7 @@ Order of Application:
 2.	Site: Site policies are applied after.
 3.	Domain: Domain policies are applied next.
 4.	OUs: OU policies are applied in order from the top-level OU to the most specific OU containing the object (user or equipment).
+<img width="1016" height="500" alt="image" src="https://github.com/user-attachments/assets/13c3e693-3d6a-46ce-9a0d-7f1aeda15ab0" />
 
 Inheritance Modifiers
 Mechanisms exist to modify how GPOs are inherited.
@@ -1267,8 +1302,9 @@ Steps to configure and apply a GPO
 Log on to a domain controller or machine with the administrative tools installed (RSAT).
 Open the Group Policy Management Console (GPMC). You can do this by searching for "gpmc.msc" in the Start menu or through Administrative Tools.
 
+<img width="920" height="477" alt="image" src="https://github.com/user-attachments/assets/d6e74fe3-7fd6-413c-98b1-82299d510a45" />
 
-
+<img width="1096" height="589" alt="image" src="https://github.com/user-attachments/assets/c3fc0783-d841-465c-a401-eec312b7ce0d" />
 
 
 
@@ -1294,6 +1330,7 @@ In the GPMC, navigate to the container in which you want to create the GPO. This
 Right-click on the container and select "Create a GPO in this domain and link it here...".
 
 In this case, I will create a GPO that applies to the entire domain.
+<img width="1016" height="516" alt="image" src="https://github.com/user-attachments/assets/6b0219ea-5516-4654-b486-fd5d514d6e90" />
 
 
 	Name the GPO:
@@ -1302,9 +1339,11 @@ Assign a descriptive name to the new GPO. For example, "Password Policy" or "Des
 
 In this case, I will configure the GPO to apply a secure password policy.
 
+<img width="946" height="505" alt="image" src="https://github.com/user-attachments/assets/7140dd9f-915f-49e3-b4e7-e4cf576fd5cf" />
 
 
 
+<img width="1016" height="160" alt="image" src="https://github.com/user-attachments/assets/92af407d-2c75-4c0d-8cab-495d3347b05b" />
 
 
 
@@ -1327,6 +1366,7 @@ Once created, the new GPO will appear in the list of GPOs linked to the selected
 
 Right-click on the GPO and select "Edit" to open the Group Policy Management Editor.
 
+<img width="900" height="444" alt="image" src="https://github.com/user-attachments/assets/1ce64392-bb80-48db-b996-26c26aa37db7" />
 
 
 
@@ -1353,13 +1393,16 @@ Computer Settings:
 These policies are applied at the computer level. Examples include security settings, software installation, network policies, etc.
 User Configuration:
 These policies are applied at the user level. Examples include desktop settings, folder redirection, software restrictions, etc.
+<img width="1015" height="452" alt="image" src="https://github.com/user-attachments/assets/b4111138-75d9-4cf5-9790-61662e215b87" />
 
 In this case, I go to:
 Computer Configuration >policies> Windows Settings > Security Settings > Account Policies > Password Policy.
+<img width="1093" height="493" alt="image" src="https://github.com/user-attachments/assets/4e3313bb-9180-4a09-923b-eb80dc7120b2" />
 
 
 Now, I double click on the policy to be modified and a window will open that will allow me to enable/disable this policy and also to modify the values.
 
+<img width="747" height="743" alt="image" src="https://github.com/user-attachments/assets/d1b46d70-a99b-4bf5-847a-01d57ffb59ce" />
 
 
 
@@ -1385,6 +1428,7 @@ Now, I double click on the policy to be modified and a window will open that wil
 
 
 Finally, I click on "Apply" and the password length policy is set to 8 characters long.
+<img width="1088" height="239" alt="image" src="https://github.com/user-attachments/assets/fd1ce041-68be-4160-ab5f-ec98d33adc24" />
 
 
 	Apply the GPO:
@@ -1397,6 +1441,7 @@ On the Domain Controller:
 Run gpupdate /force at the command prompt to update policies on the domain controller.
 On Client Computers:
 On each computer, run gpupdate /force at the command prompt to apply the new policies immediately.
+<img width="1016" height="215" alt="image" src="https://github.com/user-attachments/assets/03483289-c7d2-4ba6-9982-ca0966f4668d" />
 
 Other examples of group policies that from my point of view would be good to apply
 In addition to the password group policy that strengthens security, there are others that I believe are essential to implement in a business environment:
@@ -1404,6 +1449,7 @@ In addition to the password group policy that strengthens security, there are ot
 Policy: Deny read and write access to removable storage devices.
 Benefit: Mitigates the risk of data loss and the introduction of malware through unauthorized USB devices.
 Location: Computer Configuration > Policies > Administrative Templates > System > Removable Storage Access
+<img width="1085" height="521" alt="image" src="https://github.com/user-attachments/assets/bd1993e2-3bf2-4756-8094-5e29c43ee903" />
 
 
 
@@ -1412,18 +1458,21 @@ Location: Computer Configuration > Policies > Administrative Templates > System 
 Policy: Disable installation of devices matching any of these device IDs.
 Benefit: Ensures that only approved software is installed, reducing the risk of system vulnerabilities and conflicts.
 Location: Computer Configuration > Policies > Administrative Templates > System > Driver Installation
+<img width="1015" height="613" alt="image" src="https://github.com/user-attachments/assets/171ca959-1418-41f2-9c2c-699f7d3b15bf" />
 
 
 	Disable access to the Control Panel and Settings:
 Policy: Prohibit access to the Control Panel and Settings.
 Benefit: Prevents unauthorized changes to system settings and reduces the technical support burden due to inadvertent configuration.
 Location: User Configuration > Policies > Administrative Templates > Control Panel
+<img width="1108" height="358" alt="image" src="https://github.com/user-attachments/assets/aa496b3e-73b0-4d40-b8c8-5f1f255aef4c" />
 
 
  	Example of what happens if I try to perform an action blocked by a group policy
 If I try, for example, to access the control panel after it has been locked by group policy and group policies have been updated (either by their natural cycle or by the gpupdate /force command), I get the following message:
 
 
+<img width="853" height="722" alt="image" src="https://github.com/user-attachments/assets/674bf798-0dda-447a-b206-0f309e94e6e6" />
 
 
 
@@ -1453,12 +1502,14 @@ If I try, for example, to access the control panel after it has been locked by g
 Now, to continue with the Homelab, I will practice another fundamental skill, which is resetting user passwords. Again, I will create a ticket from the same person to simulate a real environment.
 Once the ticket is created and the request is submitted, I log in as 'IT Support' and view the ticket in question:
 
+<img width="1016" height="480" alt="image" src="https://github.com/user-attachments/assets/bfb179eb-fadf-4242-8a2b-c35013068d0d" />
 
 To do this, I go to Active Directory Users and Computers (ADUC) or Active Directory Administration Center (ADAC), and locate the user.
 •	Reset password on Active Directory Users and Computers (ADUC)
 In this case, the search can be done through the organizational units (as marked with 1, which gave me the results of the design department) or through the search function, useful when we have many users (as marked with 2):
 
 
+<img width="880" height="507" alt="image" src="https://github.com/user-attachments/assets/4e33c1f1-2cbc-4568-ac95-7909271cab88" />
 
 
 
@@ -1478,6 +1529,7 @@ In this case, the search can be done through the organizational units (as marked
 Once I have located the user, I right click on it and 'Reset password':
 
 
+<img width="648" height="687" alt="image" src="https://github.com/user-attachments/assets/95854bee-eb95-4673-ae4b-ec27b73b56b0" />
 
 
 
@@ -1506,6 +1558,7 @@ It is important to check the box that indicates that the user will have to chang
 Finally, it gives us the possibility to unblock the user, although in this case the user did not actually block the account.
 
 
+<img width="639" height="555" alt="image" src="https://github.com/user-attachments/assets/dba75efc-2db5-49da-a5c1-f2225ddc11e7" />
 
 
 
@@ -1526,6 +1579,7 @@ Finally, it gives us the possibility to unblock the user, although in this case 
 Once this is done, I get a confirmation message:
 
 
+<img width="525" height="281" alt="image" src="https://github.com/user-attachments/assets/04b2073d-7fbb-4053-8514-1a694d713419" />
 
 
 
@@ -1539,18 +1593,23 @@ Once this is done, I get a confirmation message:
 •	Reset password on Active Directory Administrative Center (ADAC)
 Resetting a password in the Active Directory Administrative Center is just as easy, in addition to the fact that it has a more user-friendly interface.
 Once ADAC is open, we can locate a section where we can easily reset a user's password:
+<img width="1016" height="305" alt="image" src="https://github.com/user-attachments/assets/04882f7a-5931-4547-939d-44d7e49fc406" />
 
 Now, once I have located the user, I can choose to right click on it and select 'Reset password' (1) or simply use the right sidebar (2) which also has this option.
+<img width="1016" height="227" alt="image" src="https://github.com/user-attachments/assets/20b6be32-4321-4702-a8dd-ee01b8e817f4" />
 
 Again, I fill in the field with the temporary password and select the option for the user to change it at the next login:
-Done! Once this is completed, the user must log in with the temporary password and then will be prompted to update it.
+<img width="1015" height="214" alt="image" src="https://github.com/user-attachments/assets/f8e2e949-756e-42ff-925c-b5ee99cf72ce" />
 
+Done! Once this is completed, the user must log in with the temporary password and then will be prompted to update it.
+<img width="1096" height="559" alt="image" src="https://github.com/user-attachments/assets/09ffe0e6-0103-4199-81d8-08be400241e1" />
 
 
 
 
 •	Reset password on Azure Active Directory
 To reset a password in Azure Active Directory, I go to the users section.
+<img width="1030" height="453" alt="image" src="https://github.com/user-attachments/assets/1bc35bc5-9945-482e-a1eb-3bc7580eb494" />
 
 
 
@@ -1559,9 +1618,11 @@ To reset a password in Azure Active Directory, I go to the users section.
 Then, I select the user to reset the password.
 In this case, as the ticket indicated, the user is “Lara Vega”:
 
+<img width="1016" height="501" alt="image" src="https://github.com/user-attachments/assets/b6c43260-db5a-442a-9fa9-70b053b9c2b7" />
 
 
 
+<img width="486" height="318" alt="image" src="https://github.com/user-attachments/assets/5d5f0f76-d3db-4520-95e7-f29ee11edba1" />
 
 
 
@@ -1574,6 +1635,7 @@ In this case, as the ticket indicated, the user is “Lara Vega”:
 Once the button is pressed, the user's password will be reset and a temporary password will be automatically generated, which must be given to the user so that he/she can change it later.
 In this case, the temporary password is “Tanu2149”.
 
+<img width="851" height="418" alt="image" src="https://github.com/user-attachments/assets/85cec175-abb1-4318-8765-078ca736cc4e" />
 
 
 
@@ -1590,16 +1652,22 @@ In this case, the temporary password is “Tanu2149”.
 	Multi-factor authentication (MFA)
 
 Multi-Factor Authentication (MFA) is a crucial security measure that adds an additional layer of protection to digital systems and accounts. Its main purpose is to mitigate the risks associated with password-only authentication, which can be vulnerable to various forms of attacks such as phishing, password theft, and the use of weak passwords.
+<img width="1015" height="481" alt="image" src="https://github.com/user-attachments/assets/e6029800-0f01-4ee3-ae18-482e9c3de396" />
 
 
 Enabling multi-factor authentication in an enterprise environment is a best practice because it significantly enhances security, reduces the risk of account compromise and meets regulatory standards, all while improving access management and protecting the organization's critical data from both internal and external threats.
 First, I am going to simulate the creation of a ticket requesting the activation of this feature (Multifactor Authentication).
+<img width="1064" height="527" alt="image" src="https://github.com/user-attachments/assets/ef854625-f5a9-46c5-b4d8-4841a7b71844" />
+
 To do this, I perform the following steps:
 1.	First, I go to the Azure portal --> https://portal.azure.com/
+<img width="1016" height="453" alt="image" src="https://github.com/user-attachments/assets/ac2a205e-4be7-482e-b5df-c01542b562e2" />
+<img width="1015" height="494" alt="image" src="https://github.com/user-attachments/assets/a8b41931-fc6b-4cad-b44a-2a5984e91644" />
 
  
 Then I Enable the pop up.
 
+<img width="561" height="361" alt="image" src="https://github.com/user-attachments/assets/7a72a368-8ed9-4aba-b7ef-950eccd407eb" />
 
 
 

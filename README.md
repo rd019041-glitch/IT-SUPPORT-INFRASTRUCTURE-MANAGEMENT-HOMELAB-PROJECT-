@@ -131,3 +131,2007 @@ If you prefer to do it that way, you can download the .iso files from the offici
 Install Windows Server on DC1 and Server2: Start the VM, connect to it, attach the Windows Server ISO, and follow the installation prompts to install Windows Server. Configure the server with appropriate settings (e.g., server name, IP address).
 Once the virtual machine is created and the Windows Server 2022 disk is 'inserted,' I will start it and proceed with the installation. I will perform this process for both the DC01 (Domain Controller) server and the SV02 server
 
+<img width="770" height="394" alt="image" src="https://github.com/user-attachments/assets/1ba39b1d-2bb4-41b2-ac12-5b4f42529980" />
+. Click Install..
+<img width="684" height="538" alt="image" src="https://github.com/user-attachments/assets/b1cd7721-be60-425e-b34c-e4d470e47c61" />
+
+After clicking 'Install,' I need to select the version I want. Among the options are the Standard and Datacenter versions, each with a Desktop Experience (GUI) version and a Server Core version. In this case, I will select the Standard version with Desktop Experience:
+<img width="554" height="378" alt="image" src="https://github.com/user-attachments/assets/75cf1b1e-deb3-4041-87fd-d7a9047c9cb6" />
+
+Accept The license
+<img width="566" height="346" alt="image" src="https://github.com/user-attachments/assets/e9632563-13a7-4f55-a022-8031c1bd6932" />
+
+Next, I need to select the partition on which the operating system will be installed. In this case, it is the only partition I have: the 30GB partition created when I created the virtual machine, but I could also create another partition and install it there.
+ <img width="593" height="445" alt="image" src="https://github.com/user-attachments/assets/e3d8486f-42eb-49ae-a0c4-1b9a3dbeefff" />
+
+After selecting the partition, the installer will continue copying files and installing the operating system. The installation time varies depending on the resources, both those we have and those allocated to the virtual machine.
+ <img width="640" height="478" alt="image" src="https://github.com/user-attachments/assets/53d706a5-7c96-43ba-8d54-52c2ccf15c9d" />
+
+
+Now, once the above is completed, you will be prompted to create a password for the 'Administrator' user, who has full control over the operating system. This account is similar to the superuser in Linux. It is essential to remember this password.
+
+<img width="950" height="693" alt="image" src="https://github.com/user-attachments/assets/ae135e0a-968f-4e4c-964a-0d2c31c2a517" />
+
+
+ 
+Now, I can log in with the credentials provided recently.
+
+ 
+<img width="952" height="610" alt="image" src="https://github.com/user-attachments/assets/e792bce3-a8eb-4b7b-bd5e-7d4ee6ee6947" />
+
+ <img width="1016" height="502" alt="image" src="https://github.com/user-attachments/assets/1f1e68ab-dc1e-44d3-8a05-65f937b8db56" />
+
+
+Once logged in, the 'Server Manager' will automatically open (this can be disabled), which allows managing Roles and Features, configuring the server's Firewall, changing the name, changing the IP address, managing storage, etc.
+
+In this case, within the 'Local Server' section, I will change its name and IP address. The IP address will change from being managed by DHCP to static, which is seen as a good practice (in servers, not in client machines), as it increases reliability among other reasons.
+<img width="1063" height="592" alt="image" src="https://github.com/user-attachments/assets/6ed298a5-22c2-4993-afba-0ed427435c0b" />
+The name will be: DC01.
+ <img width="828" height="490" alt="image" src="https://github.com/user-attachments/assets/ff00b85e-9066-4f8c-a729-938ca7c05dac" />
+
+The static IP address for DC01 will be: 192.168.0.1
+The subnet mask will be: 255.255.255.0, which means that the first 3 octets of the IP address (192.168.0) will correspond to identifying the network portion, while the fourth and last octet will correspond to identifying the host portion. In this case, with the /24 subnet mask, we get 2^8 - 2 (254) available hosts for the devices and/or servers (2 raised to the available bits, minus 2 because there are 2 addresses that cannot be assigned: 192.168.0.1, which corresponds to the network address, and 192.168.0.255, which corresponds to the broadcast address).
+The default gateway will be 192.168.0.1, corresponding to the IP address of the default gateway that I have.
+The primary DNS server will be: 8.8.8.8, corresponding to Google's public DNS server.
+The alternate DNS server will be: 8.8.4.4, also corresponding to another public DNS server provided by Google.
+
+<img width="840" height="568" alt="image" src="https://github.com/user-attachments/assets/396b98ca-7b4b-4b6a-9d61-d6a5a351dc2d" />
+
+
+
+
+
+
+
+
+
+
+
+To apply the changes (the server’s name change), it is necessary to restart the computer. That’s all for the DC01 server (temporarily, although it's still not a domain controller). Now, I will proceed to install the Windows Server operating system on the other server machine (SV02).
+Install Windows 10/11 on client VMs
+Start each client VM, connect to it, attach the Windows 10/11 ISO, and follow the installation prompts to install Windows. Configure each client with appropriate settings (e.g., machine name, IP address). Once the Windows 10 disk is 'inserted' into the client machine, I proceed to start it to initiate the installation process.
+
+<img width="806" height="614" alt="image" src="https://github.com/user-attachments/assets/f7108011-5405-43e6-9790-f0be2f0e838b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Install Now
+
+
+<img width="660" height="512" alt="image" src="https://github.com/user-attachments/assets/0c93fd52-3a22-4fb9-a4ac-28dbee9c99a4" />
+
+
+
+
+
+
+
+
+
+
+
+
+	Accept The License Terms
+
+
+<img width="842" height="530" alt="image" src="https://github.com/user-attachments/assets/273c1369-de3b-481c-83c3-172459ffbd7c" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Then Choose Custom and Allocate the Hard drive to Install Windows
+
+<img width="950" height="674" alt="image" src="https://github.com/user-attachments/assets/9e6a71a6-2eff-4711-b901-6fa32edb8408" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Now, I must wait for the installation process to finish.
+
+
+<img width="744" height="581" alt="image" src="https://github.com/user-attachments/assets/d0a45285-b6e2-484d-8979-9de8605465a1" />
+
+
+
+
+
+
+<img width="805" height="582" alt="image" src="https://github.com/user-attachments/assets/518ad977-929d-43ae-b705-4c0ac7a1db8c" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="897" height="637" alt="image" src="https://github.com/user-attachments/assets/7953787e-1a7b-49f9-ad08-571e799fa596" />
+
+
+
+
+
+
+
+
+
+
+<img width="917" height="684" alt="image" src="https://github.com/user-attachments/assets/f77d01ee-eb19-408a-a534-d3d5ea986eaa" />
+
+
+
+
+
+
+
+
+
+
+
+<img width="827" height="585" alt="image" src="https://github.com/user-attachments/assets/84348ed4-2069-4b55-88ac-86543edfeb4f" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+That's it. Now, once the operating system has started, I complete the final configurations (region, keyboard, network, local account, privacy, etc.), and once the desktop is displayed, I proceed to change the computer name to "JSS-PC02":
+
+
+
+
+
+
+
+
+<img width="814" height="624" alt="image" src="https://github.com/user-attachments/assets/b41c3f26-f7f5-4af6-ad14-b07e7afca359" />
+
+
+
+
+
+
+
+Finally, I repeat the process for the rest of the computers, only varying the name (JMFSOFT-PC01, JMFSOFT-PC03, and JMFSOFT-PC04).
+3.	Configure the Domain Controller
+
+Install Active Directory Domain Services (AD DS): Log in to DC1, open Server Manager, click Add roles and features, select Active Directory Domain Services, and complete the installation.
+
+Now, to be able to use the Windows Directory Service (Active Directory), I need to install Active Directory Domain Services (AD DS) on the server designated as the domain controller. To do this, I go to the Server Manager and select the 'Add Roles and Features' option. Then, I select Active Directory Domain Services (AD DS) and follow the steps.
+
+
+
+
+<img width="1016" height="516" alt="image" src="https://github.com/user-attachments/assets/723ae517-c05d-4f18-8e95-ba289baddfbe" />
+
+
+
+
+<img width="978" height="530" alt="image" src="https://github.com/user-attachments/assets/070aba9f-4e41-4bd6-97d1-79ec5a602766" />
+
+
+
+
+<img width="1015" height="728" alt="image" src="https://github.com/user-attachments/assets/48564e4e-bc34-4911-b88f-1f585a39aac9" />
+
+
+
+<img width="1039" height="662" alt="image" src="https://github.com/user-attachments/assets/5c2c52bb-bf4b-4021-8549-1106338f37ca" />
+
+
+
+<img width="834" height="464" alt="image" src="https://github.com/user-attachments/assets/bce202cc-97f4-4c27-bbbd-2ed23c09aa57" />
+
+
+
+<img width="860" height="526" alt="image" src="https://github.com/user-attachments/assets/ddd20dfb-4560-4700-833e-1257f8120b55" />
+
+
+
+
+<img width="844" height="404" alt="image" src="https://github.com/user-attachments/assets/f10df5c5-0f26-4d88-a52b-145c0e42d1da" />
+
+
+
+
+
+
+
+Finally, a summary of the installed roles and features will appear. I can also check the box indicating to the server that it should restart if necessary to complete the installation. This box should be checked carefully, as it is not appropriate to restart a server that is in operation in a business environment unless this restart has been scheduled in advance and does not affect the proper operation of any service. Once verified that everything is correct, I press 'Install' to begin the installation of AD DS.
+
+
+
+
+<img width="854" height="441" alt="image" src="https://github.com/user-attachments/assets/2551c8ed-f046-4cbe-be36-4c5abcbce84c" />
+
+
+
+
+
+
+
+
+Once this is done, the installation will begin. I can close the window and let the installation run in the background or simply wait for it to finish.
+
+
+
+<img width="850" height="550" alt="image" src="https://github.com/user-attachments/assets/9e003c1c-42e8-47e6-8946-e7d4e1470c32" />
+
+
+
+
+
+
+
+
+
+
+
+Finally, the installation is complete, but this doesn't mean that the server is already a Domain Controller, as only the Active Directory Domain Services (AD DS) were installed. To accomplish this, I must promote the server to a Domain Controller (DC), which will be done in the next step.
+
+
+
+<img width="854" height="434" alt="image" src="https://github.com/user-attachments/assets/8f45d162-f988-4a4a-a011-e2a796ff2134" />
+
+
+
+
+
+
+
+Promote DC1 to a Domain Controller: After installation, click on the notification flag in Server Manager, select Promote this server to a domain controller, choose Add a new forest, enter a root domain name (e.g., jss.com), and complete the wizard. Restart the server as prompted.Now, once Active Directory Domain Services are installed, I need to promote the server to a domain controller to create the forest, the domain, and then add the desired users. To do this, I need to go to the notification that appears in the Server Manager and click on 'Promote this server to a domain controller.'
+
+
+
+
+
+<img width="870" height="550" alt="image" src="https://github.com/user-attachments/assets/be699b8e-709e-4520-a9e7-c029846c183f" />
+
+
+
+
+
+
+
+
+
+Once that option is selected, a window will open with three options:
+1 - Add a domain controller to an existing domain: This option is useful when you want to add an additional server that provides authentication and authorization services within the same domain (a previously created domain). This increases redundancy and availability. It also helps distribute the load among multiple Domain Controllers, improving performance.
+2 - Add a new domain to an existing forest: This involves creating an additional domain within an Active Directory Forest. A forest is a collection of one or more domains that share a common schema and global catalog configuration. Domains within the same forest have implicit transitive trust relationships, allowing for authentication and access to resources across domains.
+3 - Add a new forest: This means creating a completely independent instance of Active Directory. A forest is the highest security and administrative boundary in AD.
+In this case, I will select the last option (Add a new forest), and the root domain name will be 'jss.com'. If there is a website called 'jmfsoft.com', it is good practice not to use that domain name as the root domain name to avoid DNS resolution conflicts.
+
+
+<img width="862" height="537" alt="image" src="https://github.com/user-attachments/assets/d6f1b34f-f0c3-41a6-b17d-3c87f1d3e2c9" />
+
+
+
+
+
+
+
+
+
+
+
+Forest functional level and domain functional level refer to the compatibility settings and features available in an Active Directory environment. These levels determine which Active Directory functions and features can be used, based on the versions of Windows Server running on the domain controllers in the environment.
+
+1 - The "Domain functional level" specifies the features and functionalities available within a specific domain in Active Directory.
+
+2 - The "Forest functional level" specifies the features and functionalities available across the entire Active Directory Forest, which includes all domains within that forest.
+
+By raising the functional levels of the domain or forest, all domain controllers must be running at least the minimum version of Windows Server required by the new functional level. Once the functional level of the forest or domain is raised, it cannot be reverted to a previous functional level without restoring from a backup.
+
+Next, there is a section called 'Specify Domain Controller Capabilities,' which has three options:
+
+1 - Domain Name System (DNS) Server: This option allows the Domain Controller to provide name resolution services that are essential for Active Directory functionality. DNS is critical for clients and servers to locate resources within the domain. AD depends on DNS to locate domain controllers, replication services, and other critical resources. SRV (Service Location) records in DNS enable clients to locate services such as domain controllers.
+
+2 - Global Catalog (GC): This option indicates that the domain controller contains a partial copy of all objects in the Active Directory Forest. Domain controllers acting as GCs store key information and allow quick searches across the entire forest. During logon, the GC can provide information about universal group membership, which is crucial for user authentication and authorization.
+
+3 - Read-Only Domain Controller (RODC): This is a special type of domain controller designed for environments where the physical security of the server cannot be guaranteed, such as branch offices or remote locations. The RODC stores a read-only copy of the Active Directory database. It cannot make changes to AD, which helps protect the integrity of the directory if the server is physically compromised. By default, the RODC does not store user credentials (passwords) unless explicitly configured to do so.
+
+Finally, we need to specify the Directory Services Restore Mode (DSRM) password, which is an important security measure in Active Directory domain controllers. It is used in directory recovery situations when the system is in a degraded state or when critical maintenance tasks need to be performed. The DSRM password allows logging in to a domain controller even if the operating system cannot start normally or if the Active Directory service is inaccessible. This provides emergency access to the domain controller in critical situations.
+
+
+<img width="930" height="622" alt="image" src="https://github.com/user-attachments/assets/a77ed195-239c-468c-b4c1-a234eb4060dd" />
+
+
+
+
+
+
+
+
+
+
+
+
+Next, we must verify the NETBIOS name, which is a network identifier used in Microsoft operating systems to identify resources on a local network. In the context of Active Directory, the NetBIOS name is primarily used for backward compatibility and to enable communication with legacy systems that use this technology.
+
+
+<img width="926" height="611" alt="image" src="https://github.com/user-attachments/assets/93e2dc53-5de2-427a-b927-f086ee24bc7d" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next, the paths will be displayed, indicating the location of the folder containing the database, the folder containing the log files, and the SYSVOL folder.
+1 - The database folder (C:\Windows\NTDS by default) stores the Active Directory database, where all directory objects and attributes are stored, including users, groups, policies, and system configurations. The NTDS.DIT file is the primary Active Directory database file. It contains all directory data, such as users, groups, computer objects, etc. Active Directory domain controllers (DCs) access this database to provide directory services.
+2 - The log files folder (C:\Windows\NTDS by default) contains the transaction log files that record all operations performed on the Active Directory database. Transaction log (LOG) files are sequential and are used to ensure the consistency and integrity of the Active Directory database. Each transaction performed in the database is recorded in these files before being committed and written to the database. In the event of system failure or data loss, the log files can be used to recover lost data or to restore the database to a consistent state.
+3 - The SYSVOL folder (C:\Windows\SYSVOL by default) stores shared data and group policies in an Active Directory environment. SYSVOL contains files and folders that are replicated among all domain controllers in the domain. This includes user login scripts, login policies, group policies, login script files, etc. In summary, these folders are critical for the operation and integrity of an Active Directory environment. The database folder stores the AD database, the log files folder records transactions, and the SYSVOL folder stores shared data and group policies.
+
+
+
+<img width="894" height="540" alt="image" src="https://github.com/user-attachments/assets/e0412f7a-525b-4e86-884c-a69b256ed95f" />
+
+
+
+
+
+
+
+
+
+Then, a summary of all the selected options and configurations is displayed. This allows reviewing the choices to confirm if I want to make a last-minute change before promoting the server as a domain controller. In my case, I reviewed all the options and they are correct, so I will proceed with the installation. Additionally, I can copy the executed script which contains the commands executed by the operating system to perform all the above. This is useful if I want to run a script in Windows PowerShell and automate future installations.
+
+
+
+<img width="884" height="594" alt="image" src="https://github.com/user-attachments/assets/d6e028bd-c05e-4bc8-9902-47f3208bcdaf" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+As a final step prior to installation (i.e., promoting the server to Domain Controller), prerequisites are checked to see if the system is suitable for promotion. In this case, although it threw some usual warnings, the system is suitable to be promoted to a domain controller. After this, I click on Install and wait for the installation to complete. When the promotion operation is finished, the system will automatically restart.
+
+
+<img width="880" height="565" alt="image" src="https://github.com/user-attachments/assets/a6abb125-b228-491a-9ca0-e90b2f2c72dd" />
+
+
+
+
+
+
+
+
+
+
+
+After the server restarts, the login screen changes. Below the user and password, a message appears saying 'Sign in to JSSDOMAIN.COM', indicating that, unless specified otherwise, I'll sign in to the domain with that name. This doesn't necessarily mean that the server is a domain controller, as the login process on client machines will be the same, but it does indicate that the server is now part of the JSSDOMAIN.COM domain.
+After promoting the server to a domain controller, new sections will appear in the Server Manager that didn't exist before. For example, on the left side, you'll see AD DS (Active Directory Domain Services) and DNS (Domain Name System). Then, in the tools section, several new tools will appear, such as Active Directory Administrative Center (ADAC), DNS, Active Directory Domains and Trusts, Active Directory Sites and Services, Active Directory Users and Computers (ADUC), among others.
+5. Join all client machines to the domain	
+Configure network settings: Ensure that all client machines and the second server can resolve the domain by setting the DNS server to the IP address of DC1.
+
+To join client computers (and also the secondary server) to the newly created domain (JSSDOMAIN.COM), the first thing I need to do is change the DNS server to the IP address of the domain controller. This is necessary for several reasons:
+
+1 - Name Resolution: Active Directory relies on the DNS service to resolve domain names, such as the domain name you are joining. The DNS server configured on the client needs to correctly resolve these names to locate the domain and complete the join process.
+
+2 - Domain Controller Location: The client needs to locate the Domain Controller to join the domain and obtain configuration information. The IP address of the Domain Controller is used to identify where the Active Directory infrastructure is located on the network.
+
+3 - Resource Records in DNS: During the domain join process, the client needs to look up specific resource records (e.g., SRV records) in DNS to locate Active Directory services, such as authentication and replication services. These records are associated with the domain name and are resolved via the DNS server configured on the client.
+
+4 - Communication with the Domain Controller: After joining the domain, the client must be able to communicate with the Domain Controller to authenticate users, obtain group policies, and perform other Active Directory operations. Configuring the DNS server is essential for the client to correctly communicate with the Domain Controller.
+
+If I do not point the DNS server to the IP address of the server, I get the following error:
+<img width="1048" height="573" alt="image" src="https://github.com/user-attachments/assets/78fff73b-5b1b-4456-93d3-278854045d8e" />
+
+So, to solve this issue and allow the client machines (and the additional server) to join the “JSSDOMAIN.COM” domain, I go to the network settings and set the DNS server to the IP of the domain controller, which in this case is 192.168.0.5. Although in some parts of the project the network is shown as both 192.168.0.0/24 and 192.168.0.0/24, this is because I am doing it in two geographically distant locations with two different ISPs, so this number will vary at times, but the concept remains the same.
+
+Therefore, to do this, I go to the wireless connection icon -> Network and Sharing Center -> Change adapter settings -> Select the network adapter and right-click on it -> Properties -> Internet Protocol Version 4 -> Properties and then set the DNS server address to match the domain controller's IP address
+
+IPv4 config OF DC01 is-------
+ <img width="1015" height="577" alt="image" src="https://github.com/user-attachments/assets/c98c0a99-4499-4522-9ab5-eabfcc062c27" />
+
+
+I Putted this IP at the DNS section of Client pc. Leave the section with Obtain the IP automatically.
+
+<img width="582" height="619" alt="image" src="https://github.com/user-attachments/assets/75ac0c4a-1d15-4c9f-a529-6b7a88893f2f" />
+
+
+
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/568dd8ad-ae23-4dcd-83da-151bcb725a0f" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once the network configurations are completed, I need to enter credentials. The user account I need to enter must have at least 'Add computer to the domain' permissions. This permission can be granted by a Domain Admin.
+
+
+
+<img width="934" height="704" alt="image" src="https://github.com/user-attachments/assets/e6c4cb38-68b4-4ec8-a06e-5b2f99da706f" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once the credentials are entered, a message will appear indicating that the computer has been successfully joined to the domain.
+
+
+<img width="497" height="325" alt="image" src="https://github.com/user-attachments/assets/033aefaf-a411-46fe-92dd-4db943cec835" />
+
+<img width="692" height="764" alt="image" src="https://github.com/user-attachments/assets/82d3b435-d330-4357-926d-ca34883a8bd8" />
+
+<img width="1073" height="403" alt="image" src="https://github.com/user-attachments/assets/f3df9145-63c4-4165-bba9-92cbd5dc322c" />
+
+
+
+
+ 
+
+ 
+
+
+Now, at the next login, the same message that appeared on the Domain Controller will appear: 'Sign in to Jssdomain.com:
+
+
+<img width="806" height="434" alt="image" src="https://github.com/user-attachments/assets/bf086f5b-68fc-4b13-a989-f6421f09e59e" />
+
+
+
+
+
+
+
+
+
+6. Create Organizational Units (OUs) in Active Directory for each department	
+6.1	Open Active Directory Users and Computers (ADUC) on DC1: Go to Server Manager > Tools > Active Directory Users and Computers (ADUC) or Active Directory Administrative Center (ADAC).
+
+1 - ADAC (Active Directory Administrative Center):
+
+Modern User Interface: ADAC has a more modern and intuitive user interface, based on PowerShell and Windows Presentation Foundation (WPF) technologies. It was introduced with Windows Server 2008 R2.
+
+Advanced Features: It offers advanced features such as the Active Directory Recycle Bin, which allows the recovery of deleted objects without having to restore the entire system. It enables more easily configurable Role-Based Access Control (RBAC). It incorporates PowerShell Search and command history, which facilitates task automation.
+
+Improved Security: It supports smart card authentication and other enhanced authentication methods.
+
+Simplified Management: It provides a consolidated and simplified view to manage Active Directory objects, such as users, groups, organizational units, and others.
+
+<img width="1016" height="504" alt="image" src="https://github.com/user-attachments/assets/7f4ce6d8-e952-4863-8609-4e0286904f1e" />
+
+
+
+2 - ADUC (Active Directory Users and Computers):
+
+<img width="962" height="438" alt="image" src="https://github.com/user-attachments/assets/b2f304bb-27bb-46d9-8523-107f5b88a3fc" />
+
+
+Classic User Interface: ADUC has a more traditional user interface, based on the Microsoft Management Console (MMC) snap-in. It is an older tool compared to ADAC and has been used since Windows 2000.
+
+Basic Features: It allows basic management of users, groups, computers, and organizational units in Active Directory. It does not have direct access to some of the more advanced features available in ADAC, such as the AD Recycle Bin.
+
+Common Use in Classic Scenarios: Although it is more basic, it is still widely used for daily administration tasks due to its familiarity and simplicity.
+
+Compatibility: It is compatible with earlier versions of Windows Server and remains a reliable tool for direct management of objects in Active Directory.
+
+6.2	Create OUs: Right-click on the domain (e.g., JSSDOMAIN.COM) and select New > Organizational Unit. Create OUs for each department (e.g., IT, Finance, Sales, HR, Marketing, Development, Customer Service, Design, Administration).
+
+To create organizational units (OUs), I have two options: do it from Active Directory Users and Computers (ADUC) or from Active Directory Administrative Center (ADAC):
+
+1 - Create from Active Directory Users and Computers (ADUC): To do this, I go to Server Manager, Tools, and select Active Directory Users and Computers. Then, once inside ADUC, I expand the domain (JSSDOMAIN.COM) and select where I want to create the organizational unit.
+
+ <img width="1015" height="543" alt="image" src="https://github.com/user-attachments/assets/ee7796af-fdf0-497a-8c9f-7f3c4681cbdc" />
+
+
+
+It is important to note that organizational units (OUs) cannot be created within containers, nor can group policies (GP) be applied to them. In this case, I will create an organizational unit called 'Argentina' within the domain and then create within it all the OUs related to the departments of the company at the Argentina site (assuming it is a company with many locations):
+
+<img width="1015" height="461" alt="image" src="https://github.com/user-attachments/assets/7cc266e7-3018-484d-9d43-f704e484137f" />
+
+
+
+
+2 - Create from Active Directory Administrative Center (ADAC): To do this, I go to Server Manager, Tools, and select Active Directory Administrative Center. Then, once inside, I select the location, right-click, New, and select 'Organizational Unit'.
+
+ <img width="1015" height="600" alt="image" src="https://github.com/user-attachments/assets/dd13747c-a7fa-4aac-9d23-32b010546925" />
+
+
+
+
+
+Then, I complete the creation of the company's organizational units (IT, HR, Finance, etc.).
+<img width="1014" height="439" alt="image" src="https://github.com/user-attachments/assets/3fd14965-60d5-4b8f-ad71-79a0448f5a25" />
+
+Move user accounts to OUs: After creating user accounts, move each account to the appropriate OU by right-clicking on the user, selecting Move, and choosing the appropriate OU.
+
+Although user creation is part of the next section, I will create a test user and move it to a previously created organizational unit (in this case, IT) just to complete point 6.3 and finish with section 1 (Homelab Creation).
+
+<img width="1016" height="357" alt="image" src="https://github.com/user-attachments/assets/04b5ed87-fb54-48ae-be7c-df26eefd8d74" />
+
+
+In this case, I will create the user named 'PAWAN' in Customer Service and then move it to the IT Organizational Unit.
+
+<img width="770" height="324" alt="image" src="https://github.com/user-attachments/assets/d7697797-5994-4fae-8606-a5ad5835cf98" />
+
+
+<img width="1050" height="366" alt="image" src="https://github.com/user-attachments/assets/8745bc25-ee46-4ea1-b6e4-5826ba53825d" />
+
+
+
+	User and Group Creation
+User Accounts and Domain Access
+Although we are creating only four virtual machines to simulate end-user workstations, we will create 20 distinct user accounts within Active Directory. This approach avoids the unnecessary complexity and resource consumption of creating 20 separate machines, while still allowing us to manage and test all 20 user accounts effectively. Each user will be able to log into any of the four client machines and access the domain as if they were on a unique machine.
+User List
+1.	Juan Martín Franco
+o	Username: juanma
+o	Occupation: IT Support
+o	Email: juanmafranco@jssdomain.com
+o	Phone: 2325 65 1813
+o	Department: IT
+o	Location: Argentina
+2.	Bob Smith
+o	Username: bsmith
+o	Occupation: Sysadmin
+o	Email: bob.smith@jssdomain.com
+o	Phone: (555) 123-4562
+o	Department: IT
+o	Location: Sant Martin
+3.	Carol Davis
+o	Username: cdavis
+o	Occupation: Finance Manager
+o	Email: carol.davis@jssdomain.com
+o	Phone: (555) 123-4563
+o	Department: Finance
+o	Location: Chicago
+4.	David Brown
+o	Username: dbrown
+o	Occupation: Sales Representative
+o	Email: david.brown@jssdomain.com
+o	Phone: (555) 123-4564
+o	Department: Sales
+o	Location: Miami
+5.	Eve Miller
+o	Username: emiller
+o	Occupation: HR Manager
+o	Email: eve.miller@jssdomain.com
+o	Phone: (555) 123-4565
+o	Department: HR
+o	Location: Los Angeles
+6.	Frank Wilson
+o	Username: fwilson
+o	Occupation: IT Support
+o	Email: frank.wilson@jssdomain.com
+o	Phone: (555) 123-4566
+o	Department: IT
+o	Location: New York
+7.	Grace Moore
+o	Username: gmoore
+o	Occupation: Marketing Specialist
+o	Email: grace.moore@jssdomain.com
+o	Phone: (555) 123-4567
+o	Department: Marketing
+o	Location: Boston
+8.	Hank Taylor
+o	Username: htaylor
+o	Occupation: Developer
+o	Email: hank.taylor@jssdomain.com
+o	Phone: (555) 123-4568
+o	Department: Development
+o	Location: San Francisco
+9.	Ivy Anderson
+o	Username: ianderson
+o	Occupation: Product Manager
+o	Email: ivy.anderson@jssdomain.com
+o	Phone: (555) 123-4569
+o	Department: Product
+o	Location: Seattle
+10.	Jack Thomas
+o	Username: jthomas
+o	Occupation: Sysadmin
+o	Email: jack.thomas@jssdomain.com
+o	Phone: (555) 123-4570
+o	Department: IT
+o	Location: San Francisco
+11.	Kathy White
+o	Username: kwhite
+o	Occupation: Customer Service Representative
+o	Email: kathy.white@jssdomain.com
+o	Phone: (555) 123-4571
+o	Department: Customer Service
+o	Location: Houston
+12.	Leo Harris
+o	Username: lharris
+o	Occupation: Network Engineer
+o	Email: leo.harris@jssdomain.com
+o	Phone: (555) 123-4572
+o	Department: IT
+o	Location: New York
+13.	Mona Martin
+o	Username: mmartin
+o	Occupation: Content Writer
+o	Email: mona.martin@jssdomain.com
+o	Phone: (555) 123-4573
+o	Department: Marketing
+o	Location: Boston
+14.	Nate Jackson
+o	Username: njackson
+o	Occupation: Database Administrator
+o	Email: nate.jackson@jssdomain.com
+o	Phone: (555) 123-4574
+o	Department: IT
+o	Location: Chicago
+15.	Lara Vega
+o	Username: laravega
+o	Occupation: Graphic Designer
+o	Email: laravega@jssdomain.com
+o	Phone: (555) 123-4575
+o	Department: Design
+o	Location: Argentina
+16.	Paul King
+o	Username: pking
+o	Occupation: IT Support
+o	Email: paul.king@jssdomain.com
+o	Phone: (555) 123-4576
+o	Department: IT
+o	Location: New York
+17.	Quinn Scott
+o	Username: qscott
+o	Occupation: Sales Representative
+o	Email: quinn.scott@jssdomain.com
+o	Phone: (555) 123-4577
+o	Department: Sales
+o	Location: Miami
+18.	Rachel Adams
+o	Username: radams
+o	Occupation: Finance Analyst
+o	Email: rachel.adams@jssdomain.com
+o	Phone: (555) 123-4578
+o	Department: Finance
+o	Location: Chicago
+19.	Sam Turner
+o	Username: sturner
+o	Occupation: DevOps Engineer
+o	Email: sam.turner@jssdomain.com
+o	Phone: (555) 123-4579
+o	Department: IT
+o	Location: Seattle
+20.	Tina Phillips
+o	Username: tphillips
+o	Occupation: Office Manager
+o	Email: tina.phillips@jssdomain.com
+o	Phone: (555) 123-4580
+o	Department: Administration
+o	Location: Los Angeles
+
+Given the list of users, I will proceed to create 10 users with ADAC and 10 users with ADUC to practice both 'programs'. Accidental deletion protection will be activated in all cases.
+
+To simulate a 'real' work environment, I'm going to create a ticket in Jira Service Management (JSM) representing a hypothetical request for user creation.
+
+
+
+
+
+
+
+I invited me through e-mail to join this project and assign tickets to myself.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now, I will create the ticket that simulates the experience of receiving it, 'working on it', and resolving it.
+
+
+
+After simulating the ticket sent by Rahul Das (a user created by myself), I assign it to myself (indicating that I will handle the ticket) and start creating the users.
+
+Finally, once the ticket is resolved (with all the users created), I get the following:
+
+
+
+
+Therefore, once I have created all the requested users, I can mark the ticket as resolved and additionally leave a message for the user who initiated it, indicating that all the users have been successfully created.
+
+
+
+
+•	User creation through Azure Active Directory (currently Microsoft Entra ID)
+In addition to managing Active Directory on-premises, you can use the cloud version, which is Azure Active Directory, currently known as Microsoft Entra ID.
+
+To do this, I must first have my domain created (in this case, I created the domain Jobskillshare408.onmicrosoft.com).
+To create users, I go to the Users section and select New User -> Create New User:
+
+
+Click Create a new user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Finally, I check that all the fields have been filled in correctly:
+
+
+
+
+
+
+
+
+
+
+
+If everything is correct, I press 'Create' to finish creating the user:
+
+	Bulk user creation with Azure Active Directory using a .csv file
+To create multiple users at once, Azure Active Directory has a section that allows you to create multiple users based on an uploaded .csv file.
+To do this, I go to Bulk operations -> Bulk Creation and download the corresponding .csv.
+
+Then, I downloaded the sample csv file to create bulk user.
+
+And this is the format.
+
+Then I put the data of employees from the ticket. After that I Submitted the Csv file.
+
+
+Once the .csv is downloaded, I fill in each column with the corresponding data, where each row will correspond to a particular user.
+Once the users are created, I get the following:
+
+	Microsoft 365 User Creation
+Steps to follow to create users in Microsoft 365:
+First, I go to the Microsoft 365 Administration Center.
+Then, on the left panel, go to the Active Users section:
+
+Then, I fill in the fields, indicating first name, last name, display name (which will appear in the list of active users) and the user name, with which the user will log in:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here I have to assign a license to the user, because I don’t have any license so I clicked create user without product license.
+
+
+
+
+
+
+
+
+Then, in the optional configuration section, you configure whether you want the user to be a "normal" user or an administrator user.
+If so, you will choose what type of administrator user it is, such as: Helpdesk Administrator, Exchange Administrator, Teams Administrator or Global Administrator if you want to give unlimited access to all features:
+
+
+
+
+
+
+
+
+
+Finally, it remains to confirm that all the data is correct and finish with the user creation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft 365 Group Creation
+Before going straight to the creation of groups, it is a good idea to define the different types of groups available in Microsoft 365 and the characteristics of each one.
+Microsoft 365 Group: A collaborative group that allows shared access to resources like Outlook, Teams, SharePoint, and more. It is fully compatible with all Microsoft 365 applications, is assigned an email address, and can integrate with Azure Active Directory for security management.
+Distribution List: Used to send emails to multiple recipients simultaneously. It is not compatible with Microsoft 365 applications and is only used for email distribution. It does not offer additional security features.
+Security Group: Designed to control access to resources within Microsoft 365 through roles and permissions. It is not compatible with Microsoft 365 applications and does not have an email address assigned. It offers strict access control to resources.
+Mail-Enabled Security Group: Similar to a security group but also allows sending emails to its members. It is not compatible with Microsoft 365 applications, but it is assigned an email address and offers strict access control to resources.
+Once you understand the differences between each type of group, it is proper to continue with the steps to create them.
+Steps to follow for the creation of groups in Microsoft 365:
+First, I go to the Microsoft 365 Administration Center.
+Then, on the left panel, go to the Active groups and teams’ section:
+
+	Then, we fill in the following data:
+
+Group name and description
+Owner/s of the group
+Group members
+Email (shared) of the group
+If the group is public or private
+If I want to connect Microsoft Teams to the group
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now I have to quickly resolve the ticket with respect to SLA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Then I Assign owners.
+
+
+
+
+
+
+
+
+
+
+Then add the members.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Then I named the group and make it privet according to company policy regarding to the Graphic design department. After that I allow admin roles to be assign for this group.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+After creating all stuffs I review and check the final view , therefore clicked on create group.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Group Policy Management and              Implementation
+GPOs (Group Policy Objects) are a feature of Windows Server operating systems that allow administrators to centrally manage and configure policies and settings for systems and users in an Active Directory domain network.
+Basically, GPOs are collections of policy settings that can be applied to users and computers in an Active Directory-based network environment. These policies can cover a wide range of settings, from system security to user environment customization.
+
+There are some basic concepts of GPOs that need to be understood before starting to configure them:
+GPO (Group Policy Objects) linking
+GPOs must be linked to a container in Active Directory to be applied.
+Containers can be sites, domains or Organizational Units (OUs).
+
+
+GPO Inheritance / Precedence
+GPO inheritance refers to how policies configured in GPOs are applied and inherited through the Active Directory hierarchy.
+The hierarchy follows this order:
+1.	Local: Local policies on the computer.
+2.	Site: Policies linked to a site in Active Directory.
+3.	Domain: Policies linked to the domain.
+4.	Organizational Units (OUs): Policies linked to specific OUs.
+Order of Application:
+1.	Local: Local policies are applied first.
+2.	Site: Site policies are applied after.
+3.	Domain: Domain policies are applied next.
+4.	OUs: OU policies are applied in order from the top-level OU to the most specific OU containing the object (user or equipment).
+
+Inheritance Modifiers
+Mechanisms exist to modify how GPOs are inherited.
+1.	Inheritance Blocking:
+You can block inheritance of GPOs into a specific OU. This means that higher level policies will not be applied to that OU.
+How to enable: In the GPMC, select the OU, right click and select "Block Inheritance".
+2.	Enforced:
+A GPO can be marked as "Enforced", which means that its policies cannot be blocked by any lower OU.
+How to enable: In the GPMC, select the GPO, right click and select "Enforced".
+3.	Security Filtering:
+GPOs can be filtered to only apply to specific users or computers by using Security Groups.
+How to configure: In the GPMC, select the GPO, go to the "Scope" tab and adjust the permissions in the Security Filtering section.
+Now that all the basic concepts are understood, it is time to show the steps for the application of such group policies.
+Steps to configure and apply a GPO
+1.	Open the Group Policy Management Console (GPMC):
+Log on to a domain controller or machine with the administrative tools installed (RSAT).
+Open the Group Policy Management Console (GPMC). You can do this by searching for "gpmc.msc" in the Start menu or through Administrative Tools.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Create a New GPO:
+
+In the GPMC, navigate to the container in which you want to create the GPO. This can be a domain, site, or an organizational unit (OU).
+Right-click on the container and select "Create a GPO in this domain and link it here...".
+
+In this case, I will create a GPO that applies to the entire domain.
+
+
+	Name the GPO:
+
+Assign a descriptive name to the new GPO. For example, "Password Policy" or "Desktop Wallpaper".
+
+In this case, I will configure the GPO to apply a secure password policy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Edit the GPO:
+
+Once created, the new GPO will appear in the list of GPOs linked to the selected domain, site or OU.
+
+Right-click on the GPO and select "Edit" to open the Group Policy Management Editor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once this is done, the Group Policy Management Editor will open.
+
+	Configure Desired Policies:
+
+In the Group Policy Management Editor, you can configure policies under two main categories:
+Computer Settings:
+These policies are applied at the computer level. Examples include security settings, software installation, network policies, etc.
+User Configuration:
+These policies are applied at the user level. Examples include desktop settings, folder redirection, software restrictions, etc.
+
+In this case, I go to:
+Computer Configuration >policies> Windows Settings > Security Settings > Account Policies > Password Policy.
+
+
+Now, I double click on the policy to be modified and a window will open that will allow me to enable/disable this policy and also to modify the values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Finally, I click on "Apply" and the password length policy is set to 8 characters long.
+
+
+	Apply the GPO:
+
+The GPO is already bound to the selected domain, site or OU, and the policies will be automatically applied to objects in that scope.
+The GPO will be processed on the next policy update cycle (typically every 90 minutes on computers and at user login).
+Force Policy Update:
+To enforce policies immediately, you can force an update on affected computers and users:
+On the Domain Controller:
+Run gpupdate /force at the command prompt to update policies on the domain controller.
+On Client Computers:
+On each computer, run gpupdate /force at the command prompt to apply the new policies immediately.
+
+Other examples of group policies that from my point of view would be good to apply
+In addition to the password group policy that strengthens security, there are others that I believe are essential to implement in a business environment:
+1.	Disable the use of USB devices:
+Policy: Deny read and write access to removable storage devices.
+Benefit: Mitigates the risk of data loss and the introduction of malware through unauthorized USB devices.
+Location: Computer Configuration > Policies > Administrative Templates > System > Removable Storage Access
+
+
+
+
+	Disable the installation of unauthorized software:
+Policy: Disable installation of devices matching any of these device IDs.
+Benefit: Ensures that only approved software is installed, reducing the risk of system vulnerabilities and conflicts.
+Location: Computer Configuration > Policies > Administrative Templates > System > Driver Installation
+
+
+	Disable access to the Control Panel and Settings:
+Policy: Prohibit access to the Control Panel and Settings.
+Benefit: Prevents unauthorized changes to system settings and reduces the technical support burden due to inadvertent configuration.
+Location: User Configuration > Policies > Administrative Templates > Control Panel
+
+
+ 	Example of what happens if I try to perform an action blocked by a group policy
+If I try, for example, to access the control panel after it has been locked by group policy and group policies have been updated (either by their natural cycle or by the gpupdate /force command), I get the following message:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Password Reset
+
+Now, to continue with the Homelab, I will practice another fundamental skill, which is resetting user passwords. Again, I will create a ticket from the same person to simulate a real environment.
+Once the ticket is created and the request is submitted, I log in as 'IT Support' and view the ticket in question:
+
+
+To do this, I go to Active Directory Users and Computers (ADUC) or Active Directory Administration Center (ADAC), and locate the user.
+•	Reset password on Active Directory Users and Computers (ADUC)
+In this case, the search can be done through the organizational units (as marked with 1, which gave me the results of the design department) or through the search function, useful when we have many users (as marked with 2):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once I have located the user, I right click on it and 'Reset password':
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now, I must enter a temporary password that will be given to the user to try to log in next time.
+It is important to check the box that indicates that the user will have to change the password at the next login, this is a good practice and its use is recommended.
+Finally, it gives us the possibility to unblock the user, although in this case the user did not actually block the account.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once this is done, I get a confirmation message:
+
+
+
+
+
+
+
+
+
+
+
+
+•	Reset password on Active Directory Administrative Center (ADAC)
+Resetting a password in the Active Directory Administrative Center is just as easy, in addition to the fact that it has a more user-friendly interface.
+Once ADAC is open, we can locate a section where we can easily reset a user's password:
+
+Now, once I have located the user, I can choose to right click on it and select 'Reset password' (1) or simply use the right sidebar (2) which also has this option.
+
+Again, I fill in the field with the temporary password and select the option for the user to change it at the next login:
+Done! Once this is completed, the user must log in with the temporary password and then will be prompted to update it.
+
+
+
+
+
+•	Reset password on Azure Active Directory
+To reset a password in Azure Active Directory, I go to the users section.
+
+
+
+
+
+Then, I select the user to reset the password.
+In this case, as the ticket indicated, the user is “Lara Vega”:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once the button is pressed, the user's password will be reset and a temporary password will be automatically generated, which must be given to the user so that he/she can change it later.
+In this case, the temporary password is “Tanu2149”.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Multi-factor authentication (MFA)
+
+Multi-Factor Authentication (MFA) is a crucial security measure that adds an additional layer of protection to digital systems and accounts. Its main purpose is to mitigate the risks associated with password-only authentication, which can be vulnerable to various forms of attacks such as phishing, password theft, and the use of weak passwords.
+
+
+Enabling multi-factor authentication in an enterprise environment is a best practice because it significantly enhances security, reduces the risk of account compromise and meets regulatory standards, all while improving access management and protecting the organization's critical data from both internal and external threats.
+First, I am going to simulate the creation of a ticket requesting the activation of this feature (Multifactor Authentication).
+To do this, I perform the following steps:
+1.	First, I go to the Azure portal --> https://portal.azure.com/
+
+ 
+Then I Enable the pop up.
+
+
+
+
+
+
+
+
+
+
+
+
+Once accepted, the following banner is displayed, indicating that multi-factor authentication has been enabled for the selected users:
+
+Finally, it remains to answer the ticket indicating to the user (in this case, Carlos Perez), that the multifactor authentication (MFA) was successfully enabled.
+In addition, evidence is attached to the ticket demonstrating the indicated action.
+ 
+	Software Deployment Through PDQ Inventory
+In this section, I will use a software deployment program, PDQ Deploy, to simplify and automate the installation and updating of applications across multiple machines in my Homelab. The reasons for implementing a software deployment tool like PDQ Deploy are:
+•	Efficiency and Time-Saving: Manually installing or updating software on each client machine can be very time-consuming, especially in a larger environment. PDQ Deploy streamlines this process by allowing for the automated deployment of software packages across all connected devices, saving significant time and effort.
+•	Consistency and Control: Using PDQ Deploy ensures that all machines receive the same software version and configuration, reducing the risk of discrepancies and compatibility issues. This helps maintain a uniform and controlled IT environment.
+•	Centralized Management: PDQ Deploy provides a centralized interface to manage software installations, making it easier to track deployment status, manage software versions, and perform updates from a single point of control.
+•	Scalability: As my Homelab grows, manually handling software installations becomes increasingly impractical. PDQ Deploy scales with the environment, allowing for efficient software management regardless of the number of machines involved.
+In this case, I will do it from the secondary server (SV02) to balance the load and not overburden the domain controller (DC01).
+This tool can be downloaded from the following website: PDQ Deploy
+Now, I proceed to download and install it on the secondary server (SV02).
+To do this, I need to create an account, which will give me a free trial of the full program for 14 days, although the basic functionality (software deployment) can still be used after those 14 days:
+
+
+Once registered, I am redirected to the following page where I get the links to download PDQ Deploy & PDQ Inventory, along with their licenses (which last for 14 days).
+
+
+After installing (as a server, since DC01 will be in charge of deploying to client machines), the program interface will look like this:
+
+Now, to begin the deployment, first, I need to have the installer of the software I want to deploy downloaded and saved in a location.
+In this case, for simplicity, I'll choose to install 7zip.
+The installer will be located in a folder on the desktop named 'Software to Deploy':
+Now, I open PDQ Deploy and select 'New Package'. Then, I fill in the fields.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Afterwards, I go to 'Steps' and then select 'Install':
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Then, I select the installer, add the parameters for silent installation (in this case, the appropriate one for 7zip is /S) to avoid disturbing any user while they are working, and press save.
+Once this is done, the package will appear already created. Now, all that's left is to right-click on it and press 'Deploy Once' to begin the deployment.
+
+
+
+
+Finally, I must select the users/computers by clicking on 'Choose Targets', and that's it, I can start the deployment:
+ 
+
+
+In this case, just for testing purposes, I'll select client machines 1 & 2 (JssPC01, JssPC02).
+
+
+
+
+After initiating the deployment, I get the following results (in this case  I deploy on only one Pc[JssPC01] )
+
+Now, I verify that 7zip was installed correctly on the client machines:
+
+And, with this, I can successfully conclude the deployment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Remote Access and Troubleshooting
+In this section of the project, remote access between company computers will be implemented for troubleshooting purposes.
+This concept is fundamental in day-to-day IT support, since it is a required skill that is very useful because at times it may not be possible to physically access a computer (due to geographical issues, for example).
+There are many tools on the market that facilitate remote access, such as TeamViewer or AnyDesk. Even Windows comes with a tool built into the operating system itself, but for reasons of versatility I will use TeamViewer because it works on many operating systems and it is also my tool of choice, but I could easily use AnyDesk, which also has a very simple interface, less resource consumption and lower licensing costs.
+
+ 
+
+In this case, the connection will be made from the SV02 machine to the JMFSOFT-PC01 client machine.
+To do this, I must perform the following steps:
+1.	First, I need to install TeamViewer on both computers.
+To download the executable, I go to https://www.teamviewer.com/ and click on Free Download.
+Once this is done, I select the desired plan.
+In this case, I click on "Free", but in a business environment you may have to opt for the other licensing options.
+ 
+
+
+Now, I must choose which type of installation I want, each one with its respective functionalities and/or advantages as appropriate.
+Among the options are:
+
+
+•	TeamViewer Quick Support: No full installation is required; it is a lightweight, portable application. Ideal for quick and occasional support.
+•	TeamViewer Full Client: Offers all TeamViewer functionalities for full remote access and control. Allows both inbound and outbound connection, which means you can control other devices or be controlled. Includes features such as file transfer, chat, and Wake-on-LAN.
+•	TeamViewer Host: Provides continuous remote access to devices, ideal for long-term remote management. Requires installation on the device. Allows unlimited and permanent remote connections. Ideal for keeping computers and servers under constant surveillance and support.
+•	TeamViewer MSI Package: Facilitates the distribution and management of TeamViewer installations through group policies in corporate networks. MSI format suitable for deploying and managing installation on multiple devices via Active Directory and GPOs. Supports custom configurations to suit specific needs. Allows automating installation and configuring pre-deployment settings.
+•	TeamViewer Meeting: Dedicated platform for online meetings, video conferencing, and real-time collaboration. Provides tools for high-quality audio and visual communication. Includes screen sharing, chat, and meeting recording functionalities.
+Below is a comparative table showing the main features between each version:
+ 
+In this case I chose to install the "Full Client" version on the DC01, in its 64-Bits version.
+Once downloaded and installed, the client is executed, which looks as follows:
+ 
+
+To make a connection, it is necessary to use the ID and password.
+
+These credentials should only be shared between the IT Support Technician and the person who wishes to receive help from the IT Support Technician, otherwise anyone could gain remote access to the company's equipment.
+
+Now, I download and install the Quick Support version on the JSS-PC01 computer (just for demonstration and simplicity, as I could have opted for the Full Client version).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Finally, just share the credentials of the client computer (JMFSOFT-PC01) with the IT Support manager so that he/she can enter them in the TeamViewer client to gain remote access and troubleshoot problems.
+
+
+
+
+
+
+	VPN Configuration
+In addition to using remote access to troubleshoot problems, a good practice is to use remote access via VPN.
+A Virtual Private Network (VPN) is a technology that creates a secure, encrypted network connection over a public network, such as the Internet. It allows users to send and receive data securely over shared or public networks as if their devices were connected directly to a private network.
+Why is it considered a good practice?
+•	Data Security:
+o	Encryption: VPNs use encryption protocols to protect the data transmitted between the user and the VPN server. This makes the information unreadable to anyone intercepting the connection.
+o	Authentication: VPNs may require authentication, which ensures that only authorized users can access the network.
+•	Privacy:
+o	IP Hiding: The VPN hides the user's IP address, which helps maintain online privacy by making user activity less traceable.
+o	Identity Protection: By hiding the user's location and identity, VPNs protect against tracking and data collection by third parties.
+•	Secure Remote Access:
+o	Remote Work: VPNs allow employees to securely access the corporate network from remote locations, which is crucial for teleworking and workforce mobility.
+o	Corporate Resources: Users can access internal corporate resources, such as files, applications and databases, as if they were physically in the office.
+•	Censorship and Geographical Restrictions Avoidance:
+o	Accessing Blocked Content: VPNs allow users to access websites and services that may be blocked or restricted in their geographic location.
+o	Censorship Avoidance: They can be used to circumvent censorship in regions where Internet access is controlled or restricted.
+•	Information Integrity:
+o	Protection Against Tampering: VPNs' encryption and security protocols protect data from alteration and tampering while in transit.
+Conclusion
+Implementing VPNs is a best practice for its ability to provide a secure and private connection over public networks, protect sensitive information and allow secure remote access to network resources. This not only improves overall network security, but also ensures the integrity and privacy of transmitted data.
+Steps to set up a VPN
+1.	First, I must choose on which server I want to install the role.
+In this case I will choose to install the Remote Access role on the SV02 server. This helps distribute the workload and improves security by not directly exposing the domain controller to external connections.
+To start, I open the Server Manager:
+
+Then, to add the role,  I go to “Manage” and then “Add roles and features”:
+Now, I select the “Remote Access” role and install it:
+Then, I select the “DirectAccess and VPN (RAS)” option:
+o	DirectAccess is a remote access technology introduced in Windows Server 2008 R2. It allows remote users to access internal network resources without the need to manually initiate a VPN connection. DirectAccess automatically establishes a secure, persistent connection between the user's device and the corporate network, providing an experience similar to being in the office.
+o	VPN is a technology that creates a secure, encrypted connection over a less secure network, such as the Internet. VPN allows remote users to access internal network resources as if they were directly connected to the network.
+2.	Finally, I review the selected items and confirm that everything is correct to start with the installation of the Remote Access role, so I press “Install”:
+Once the installation is complete, a message will be displayed indicating that the installation was successful, but that configuration is required:
+
+
+
+
+
+
+
+
+
+Now, it is time to configure the Virtual Private Network (VPN), which will allow remote access to employees in a distant geographical location.
+To do this, I must open the “Introduction Wizard”, which is displayed when I finish installing the “Remote Access” role:
+
+Once the wizard is opened, a window containing 3 options will be displayed:
+
+
+
+
+
+
+
+
+
+
+Deploy both DirectAccess and VPN (Recommended): Implementing both VPN and DirectAccess offers flexibility, allowing users to choose between automatic (DirectAccess) or manual (VPN) connections based on their needs. This option provides compatibility across various devices and operating systems that do not support DirectAccess, such as macOS and Linux. DirectAccess ensures a seamless and continuous connection to the corporate network, ideal for users who require uninterrupted access. It also enhances security by utilizing multiple authentication and encryption methods. However, managing both technologies can be complex, requiring more time and resources, and DirectAccess requires IPv6, which might necessitate additional network configurations.
+Deploy DirectAccess only: Implementing DirectAccess Only provides a transparent connection experience, as users do not need to manually initiate the connection. It allows continuous remote management of devices, even when users are not logged in, and uses IPsec for secure communication with the option for multi-factor authentication. The downside is its limited compatibility, as it only works with Windows devices that support DirectAccess, and it requires IPv6 and additional network configurations.
+Deploy VPN only: Implementing VPN Only offers broad compatibility with various devices and operating systems, including Windows, macOS, Linux, Android, and iOS. It is generally simpler and more straightforward to configure compared to DirectAccess and allows for flexibility in choosing VPN protocols based on security and compatibility needs. However, users must manually initiate the VPN connection each time they need access to the corporate network, and administrators typically cannot manage remote devices when they are not connected to the VPN.
+In this case, I will select the option “Deploy VPN only”.
+1.	Once this option is selected, a new window called “Routing and Remote Access” will open.
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this case, you can see by the icon with the red arrow that the service is not currently configured and enabled.
+To configure it, we right click on it and select the option “Configure and enable Remote Access”:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once the wizard is opened, a configuration menu opens where I have to choose a combination of services to provide:
+•	Remote Access: Configures the server to function as a Remote Access Service (RAS), allowing users to connect to the corporate network via dial-up lines or private networks.
+•	Network Address Translation (NAT): Configures the server to act as a NAT device, enabling devices on a private network to access the Internet using a single public IP address. NAT hides internal IP addresses, enhancing security and conserving public IP addresses.
+•	Virtual Private Network (VPN) and NAT access: Configures the server to provide both VPN and NAT services. This allows remote users to securely connect to the corporate network over the Internet (VPN) and also provides NAT services to manage network traffic between internal and external networks.
+•	Secure connection between two private networks: Sets up a secure connection between two distinct networks, allowing them to communicate securely over the Internet. This is ideal for connecting different branches of a company, creating a private virtual network between them.
+•	Custom configuration: Allows for detailed configuration of remote access services. You can manually select the specific services you want to configure, such as VPN, NAT, routing, dial-up remote access, etc. This option offers the most flexibility to tailor the setup to specific needs.
+In this case, I select the first option (Remote Access), since I am only interested in providing the VPN service:
+
+Then, I select the “VPN” option:
+Now, I must select the interface that connects the server to the Internet.
+In this case, it is the “Ethernet” interface, whose IP address is 192.168.0.9:
+ 
+Now, I must select whether I want the IP addresses of the computers connecting to the VPN to be assigned automatically (via DHCP) or whether I want an IP address to be chosen from a defined range.
+In this case, I will select the option “From a specified address range”:
+
+
+
+
+
+
+
+
+
+
+
+In This Case I Choose No, Use Routing and Remote Access to Authenticate Connection Request.
+Finally, I check that everything is correct and press “Finish”:
+
+
+
+
+
+
+
+
+
+
+
+
+Once this is done, the VPN server will be running:
+Now, to connect to a VPN from a client computer (in this case, JSS-PC01), I go to the search bar and type VPN.
+Then, I select the “VPN Configuration” option:
+
+
+
+
+
+
+
+
+
+
+
+
+Then, I select the “Add a VPN connection” option:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Task Automation with PowerShell
+PowerShell is a valuable tool for automating tasks in a Help Desk role because it saves time and reduces manual work. Instead of performing repetitive tasks like resetting passwords or creating user accounts one by one, you can automate these processes with scripts, completing them in seconds. This not only speeds up your workflow but also allows you to handle more requests in less time.
+Automating with PowerShell also ensures consistency and reduces human error. When tasks are done manually, there’s always a risk of mistakes, but a well-written script guarantees the same accurate result every time. This makes PowerShell an essential tool for ensuring that systems are properly managed and maintained.
+Additionally, PowerShell offers flexibility, allowing you to manage different aspects of IT, from Active Directory to software deployment, making it a versatile solution for a wide range of tasks.
+ 
+Bulk User creation through Powershell
+Using PowerShell to create users in Active Directory offers key advantages like automation, allowing repetitive tasks to be performed quickly and consistently, ensuring uniformity across the organization. It also provides scalability, making it efficient to manage large numbers of users, and flexibility to customize attributes during creation, all of which help streamline user management in enterprise environments.
+To perform a mass creation of users using Powershell, I must perform the following steps:
+1.	First, I am going to create a file with .csv (Comma-Separated Value) extension, which will contain the users that I am going to add to Active Directory using Powershell.
+This file, as the name of the extension indicates, will separate each Active Directory attribute by commas (,).
+
+2.	Now, I must prepare the script that imports that .csv file, and run the command that creates the users in Active Directory based on that file.
+
+
+First, I import the CSV file.
+
+Then, I create some variables that will be useful to pass as parameters to the command that will create the users.
+In this case, for testing purposes, all users will go to the same OU, and the domain will be one created on a Windows Server 2019 server, named 'Jssdomain.com'.
+
+
+
+
+
+
+
+
+
+
+Once the .csv file is loaded in the $users variable, I proceed to go through each one of the users and for each one of them (for Each), I save their data in variables and pass them to the New-AD User object, which will create the users.
+
+
+
+ 
+
+
+
+
+And the result of executing the script in Active Directory is this (the user 'Raj' was already created)
+
+
+
+
+
+
+	Bulk User Disabling through PowerShell
+To disable users in PowerShell, the command 'Disable-AD Account' is used.
+In this case, I will disable those users that belong to the 'IT' department.
+The script is simple, since the command only receives the user's identity.
+
+
+
+
+
+
+
+
+
+
+
+
+Project Conclusion
+Project Overview:
+This project demonstrates my capabilities in setting up and managing a comprehensive IT environment, essential for a role as an IT Support Specialist or Help Desk Jr/Trainee. The core of the project is the creation of a homelab that simulates real-world IT infrastructure, showcasing a range of skills from system administration to network monitoring, user support, and cloud-based services.
+Tools and Technologies Used:
+1.	Virtualization:
+o	Hyper-V: Used to create and manage multiple virtual machines (VMs), allowing for a dynamic and scalable test environment.
+
+ 
+1.	
+Operating Systems:
+o	Windows Server 2022: Deployed as domain controllers and application servers.
+
+
+
+
+
+
+
+•	Windows 10: Set up as client              machines.
+
+
+
+Directory Services:
+•	Active Directory (AD): Implemented to manage users, groups, and devices across the network.
+
+
+
+
+
+
+
+Azure Active Directory: Set up for cloud-based identity and access management.
+
+
+
+
+
+
+
+Network and System Management:
+•	PDQ Deploy: Utilized for automated software deployment and management.
+
+
+
+
+
+
+Cloud Services:
+•	Microsoft 365: Implemented and managed user accounts, licenses, and shared mailboxes. Configured services like Exchange, SharePoint, and OneDrive, including recovery of deleted files and mailbox management.
+ 
+Ticketing System:
+•	Jira Service Management (JSM): Adopted to simulate real-world IT ticketing and service management.
+
+
+
+
+
+
+
+Remote Access and Support:
+•	TeamViewer: Integrated for remote access and support capabilities, facilitating troubleshooting and user assistance.
+
+
+
+
+
+
+
+
+VPN Configuration:
+•	Remote Access Role (Windows Server): Set up a VPN to allow secure remote access to the network, including the configuration of roles and client connectivity.
+ 
+Task Automation:
+•	PowerShell: PowerShell scripts were used to automate key tasks such as bulk user creation and bulk user disabling in Active Directory, improving efficiency and consistency across the project.
+ 
+Key Project Components:
+1.	Homelab Setup:
+o	Created a fully functional Homelab consisting of two Windows Server 2022 VMs, four Windows 10 client VMs, and a Linux VM.
+o	Configured the VMs to replicate a corporate IT environment, including domain joining and policy application.
+2.	Active Directory Deployment and Management:
+o	Set up a primary domain controller with Windows Server 2022.
+o	Implemented organizational units (OUs) to mirror departmental structures.
+o	Created user accounts and assigned them to appropriate OUs, simulating real-world departmental hierarchies.
+o	Integrated Group Policy Objects (GPOs) to enforce security policies, manage desktop configurations, and ensure uniformity across the domain.
+3.	Cloud Identity and Security:
+o	Established and configured Azure Active Directory (Azure AD) for cloud-based identity management.
+o	Created and managed cloud-based user accounts and groups.
+o	Enabled Multi-Factor Authentication (MFA) for added security on Azure AD.
+4.	System and Software Management:
+o	Utilized PDQ Deploy for centralized software deployment across all Windows clients, demonstrating proficiency in remote software management.
+o	Configured and managed Windows Server roles and features, including DNS, DHCP, and Remote Access.
+5.	Microsoft 365 Administration:
+o	Managed Microsoft 365 services, including user accounts, license assignments, and group configurations.
+o	Administered Exchange Online for mailbox management, and implemented SharePoint and OneDrive for file storage and collaboration.
+o	Executed recovery operations for deleted files and mailboxes.
+6.	Network Monitoring and Visualization:
+o	Installed and configured Zabbix for comprehensive monitoring of all VMs.
+o	Set up Grafana dashboards to visualize monitoring data, providing insights into system performance and health.
+7.	IT Service Management:
+o	Implemented Jira Service Management (JSM) as a ticketing system to simulate handling IT support requests.
+o	Managed and resolved simulated tickets, reflecting typical IT support tasks like password resets, software installations, and system troubleshooting.
+8.	Remote Access and Support:
+o	Integrated tools like TeamViewer and AnyDesk for remote access and support capabilities.
+o	Demonstrated proficiency in using these tools to resolve user issues remotely, enhancing support efficiency.
+
+9.	VPN Configuration:
+o	Configured a VPN to provide secure remote access to network resources, including role-based access controls and client setup.
+10.	Task Automation with PowerShell:
+o	Automated key tasks such as bulk user creation and bulk user disabling in Active Directory, reducing manual intervention and improving efficiency.
+
+
+

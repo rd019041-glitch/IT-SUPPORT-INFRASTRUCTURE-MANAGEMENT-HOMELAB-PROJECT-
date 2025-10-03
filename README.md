@@ -1683,7 +1683,8 @@ Once accepted, the following banner is displayed, indicating that multi-factor a
 
 Finally, it remains to answer the ticket indicating to the user (in this case, Carlos Perez), that the multifactor authentication (MFA) was successfully enabled.
 In addition, evidence is attached to the ticket demonstrating the indicated action.
- 
+ <img width="1015" height="672" alt="image" src="https://github.com/user-attachments/assets/03945df4-a200-4575-b694-4e7270564d73" />
+
 	Software Deployment Through PDQ Inventory
 In this section, I will use a software deployment program, PDQ Deploy, to simplify and automate the installation and updating of applications across multiple machines in my Homelab. The reasons for implementing a software deployment tool like PDQ Deploy are:
 •	Efficiency and Time-Saving: Manually installing or updating software on each client machine can be very time-consuming, especially in a larger environment. PDQ Deploy streamlines this process by allowing for the automated deployment of software packages across all connected devices, saving significant time and effort.
@@ -1694,18 +1695,24 @@ In this case, I will do it from the secondary server (SV02) to balance the load 
 This tool can be downloaded from the following website: PDQ Deploy
 Now, I proceed to download and install it on the secondary server (SV02).
 To do this, I need to create an account, which will give me a free trial of the full program for 14 days, although the basic functionality (software deployment) can still be used after those 14 days:
+<img width="1106" height="622" alt="image" src="https://github.com/user-attachments/assets/f048a9da-b92d-4915-a3b5-d56382ad54b6" />
 
 
 Once registered, I am redirected to the following page where I get the links to download PDQ Deploy & PDQ Inventory, along with their licenses (which last for 14 days).
 
+<img width="1074" height="515" alt="image" src="https://github.com/user-attachments/assets/784b03bc-1f3f-4379-993a-e3ec7e8d754d" />
 
 After installing (as a server, since DC01 will be in charge of deploying to client machines), the program interface will look like this:
+<img width="1016" height="545" alt="image" src="https://github.com/user-attachments/assets/7757b0be-d17c-4325-a103-d58a2cca7adc" />
 
 Now, to begin the deployment, first, I need to have the installer of the software I want to deploy downloaded and saved in a location.
 In this case, for simplicity, I'll choose to install 7zip.
 The installer will be located in a folder on the desktop named 'Software to Deploy':
+<img width="1015" height="334" alt="image" src="https://github.com/user-attachments/assets/8d3b8c99-c107-4652-9d91-49464eb73221" />
+
 Now, I open PDQ Deploy and select 'New Package'. Then, I fill in the fields.
 
+<img width="893" height="542" alt="image" src="https://github.com/user-attachments/assets/888da193-d3c5-4008-9d07-ca3220a303af" />
 
 
 
@@ -1736,6 +1743,7 @@ Now, I open PDQ Deploy and select 'New Package'. Then, I fill in the fields.
 Afterwards, I go to 'Steps' and then select 'Install':
 
 
+<img width="918" height="612" alt="image" src="https://github.com/user-attachments/assets/6336cb58-3e7c-42ba-b36f-0e5a04a57622" />
 
 
 
@@ -1764,23 +1772,31 @@ Afterwards, I go to 'Steps' and then select 'Install':
 
 
 Then, I select the installer, add the parameters for silent installation (in this case, the appropriate one for 7zip is /S) to avoid disturbing any user while they are working, and press save.
+<img width="977" height="621" alt="image" src="https://github.com/user-attachments/assets/cb414feb-cfe9-49f6-8865-1f1b74f71583" />
+
 Once this is done, the package will appear already created. Now, all that's left is to right-click on it and press 'Deploy Once' to begin the deployment.
 
+<img width="1015" height="580" alt="image" src="https://github.com/user-attachments/assets/3367d763-9def-4ff2-b311-586d06f4b5cb" />
 
 
 
 Finally, I must select the users/computers by clicking on 'Choose Targets', and that's it, I can start the deployment:
  
+<img width="1015" height="680" alt="image" src="https://github.com/user-attachments/assets/8bd8dbca-7aa1-47e9-8b5a-4b69715f5c94" />
 
 
 In this case, just for testing purposes, I'll select client machines 1 & 2 (JssPC01, JssPC02).
 
+<img width="1015" height="576" alt="image" src="https://github.com/user-attachments/assets/133a4f43-1ae5-4ba3-9443-68b3db951a06" />
 
+<img width="1015" height="722" alt="image" src="https://github.com/user-attachments/assets/885fa1ec-7e0a-42ba-a7ea-26e8fc669a9e" />
 
 
 After initiating the deployment, I get the following results (in this case  I deploy on only one Pc[JssPC01] )
+<img width="1084" height="600" alt="image" src="https://github.com/user-attachments/assets/69984edc-7b46-49ed-ad07-531f316ec2c9" />
 
 Now, I verify that 7zip was installed correctly on the client machines:
+<img width="1111" height="923" alt="image" src="https://github.com/user-attachments/assets/b6c2bf4b-24fe-4d08-ac1b-a846ccef4847" />
 
 And, with this, I can successfully conclude the deployment.
 
@@ -1802,6 +1818,7 @@ And, with this, I can successfully conclude the deployment.
 In this section of the project, remote access between company computers will be implemented for troubleshooting purposes.
 This concept is fundamental in day-to-day IT support, since it is a required skill that is very useful because at times it may not be possible to physically access a computer (due to geographical issues, for example).
 There are many tools on the market that facilitate remote access, such as TeamViewer or AnyDesk. Even Windows comes with a tool built into the operating system itself, but for reasons of versatility I will use TeamViewer because it works on many operating systems and it is also my tool of choice, but I could easily use AnyDesk, which also has a very simple interface, less resource consumption and lower licensing costs.
+<img width="312" height="312" alt="image" src="https://github.com/user-attachments/assets/259052d7-023c-4720-9b6b-9d02834f6630" />
 
  
 
@@ -1809,8 +1826,11 @@ In this case, the connection will be made from the SV02 machine to the JMFSOFT-P
 To do this, I must perform the following steps:
 1.	First, I need to install TeamViewer on both computers.
 To download the executable, I go to https://www.teamviewer.com/ and click on Free Download.
+<img width="1042" height="595" alt="image" src="https://github.com/user-attachments/assets/f889ab34-d6dd-4b1d-87c8-563306616766" />
+
 Once this is done, I select the desired plan.
 In this case, I click on "Free", but in a business environment you may have to opt for the other licensing options.
+<img width="1015" height="422" alt="image" src="https://github.com/user-attachments/assets/2ac79939-c326-45e2-a9c3-530416331ecf" />
  
 
 
@@ -1824,9 +1844,11 @@ Among the options are:
 •	TeamViewer MSI Package: Facilitates the distribution and management of TeamViewer installations through group policies in corporate networks. MSI format suitable for deploying and managing installation on multiple devices via Active Directory and GPOs. Supports custom configurations to suit specific needs. Allows automating installation and configuring pre-deployment settings.
 •	TeamViewer Meeting: Dedicated platform for online meetings, video conferencing, and real-time collaboration. Provides tools for high-quality audio and visual communication. Includes screen sharing, chat, and meeting recording functionalities.
 Below is a comparative table showing the main features between each version:
- 
+ <img width="1015" height="594" alt="image" src="https://github.com/user-attachments/assets/0c429006-ec43-44d5-972d-c165dd4b8877" />
+
 In this case I chose to install the "Full Client" version on the DC01, in its 64-Bits version.
 Once downloaded and installed, the client is executed, which looks as follows:
+<img width="1015" height="766" alt="image" src="https://github.com/user-attachments/assets/e9761180-85c3-4006-961b-c0dea055ae44" />
  
 
 To make a connection, it is necessary to use the ID and password.
@@ -1835,6 +1857,7 @@ These credentials should only be shared between the IT Support Technician and th
 
 Now, I download and install the Quick Support version on the JSS-PC01 computer (just for demonstration and simplicity, as I could have opted for the Full Client version).
 
+<img width="656" height="801" alt="image" src="https://github.com/user-attachments/assets/d31143ad-b80c-4f58-9fad-cd64de9ecd44" />
 
 
 
@@ -1898,16 +1921,27 @@ Steps to set up a VPN
 1.	First, I must choose on which server I want to install the role.
 In this case I will choose to install the Remote Access role on the SV02 server. This helps distribute the workload and improves security by not directly exposing the domain controller to external connections.
 To start, I open the Server Manager:
+<img width="1016" height="762" alt="image" src="https://github.com/user-attachments/assets/127aede6-1e92-4e4c-a200-fad4cd28d764" />
 
 Then, to add the role,  I go to “Manage” and then “Add roles and features”:
+<img width="1016" height="407" alt="image" src="https://github.com/user-attachments/assets/42cb7596-afa9-4c05-96be-0d4d13e02225" />
+
 Now, I select the “Remote Access” role and install it:
+<img width="1108" height="720" alt="image" src="https://github.com/user-attachments/assets/5c7ee7f3-62f8-4ed2-a78d-82f911787d6a" />
+
 Then, I select the “DirectAccess and VPN (RAS)” option:
+<img width="1016" height="669" alt="image" src="https://github.com/user-attachments/assets/7c6edd31-6bcb-4adf-82a1-9fd4ef9d3863" />
+
 o	DirectAccess is a remote access technology introduced in Windows Server 2008 R2. It allows remote users to access internal network resources without the need to manually initiate a VPN connection. DirectAccess automatically establishes a secure, persistent connection between the user's device and the corporate network, providing an experience similar to being in the office.
 o	VPN is a technology that creates a secure, encrypted connection over a less secure network, such as the Internet. VPN allows remote users to access internal network resources as if they were directly connected to the network.
 2.	Finally, I review the selected items and confirm that everything is correct to start with the installation of the Remote Access role, so I press “Install”:
+<img width="1016" height="646" alt="image" src="https://github.com/user-attachments/assets/586791e4-4c6e-4977-aa05-d10a8c110008" />
+
 Once the installation is complete, a message will be displayed indicating that the installation was successful, but that configuration is required:
 
+<img width="1038" height="705" alt="image" src="https://github.com/user-attachments/assets/db190efa-fad6-470f-a4d5-231c1203b20f" />
 
+<img width="1067" height="699" alt="image" src="https://github.com/user-attachments/assets/bb543463-2551-447d-ab8e-e6851505555f" />
 
 
 
@@ -1917,9 +1951,11 @@ Once the installation is complete, a message will be displayed indicating that t
 
 Now, it is time to configure the Virtual Private Network (VPN), which will allow remote access to employees in a distant geographical location.
 To do this, I must open the “Introduction Wizard”, which is displayed when I finish installing the “Remote Access” role:
+<img width="1016" height="710" alt="image" src="https://github.com/user-attachments/assets/8f7594a0-9f82-4f3f-8589-359f3aa2f6d8" />
 
 Once the wizard is opened, a window containing 3 options will be displayed:
 
+<img width="628" height="509" alt="image" src="https://github.com/user-attachments/assets/71fa1da7-beb3-461c-b8ca-1808a5db79c3" />
 
 
 
@@ -1933,6 +1969,8 @@ Deploy both DirectAccess and VPN (Recommended): Implementing both VPN and Direct
 Deploy DirectAccess only: Implementing DirectAccess Only provides a transparent connection experience, as users do not need to manually initiate the connection. It allows continuous remote management of devices, even when users are not logged in, and uses IPsec for secure communication with the option for multi-factor authentication. The downside is its limited compatibility, as it only works with Windows devices that support DirectAccess, and it requires IPv6 and additional network configurations.
 Deploy VPN only: Implementing VPN Only offers broad compatibility with various devices and operating systems, including Windows, macOS, Linux, Android, and iOS. It is generally simpler and more straightforward to configure compared to DirectAccess and allows for flexibility in choosing VPN protocols based on security and compatibility needs. However, users must manually initiate the VPN connection each time they need access to the corporate network, and administrators typically cannot manage remote devices when they are not connected to the VPN.
 In this case, I will select the option “Deploy VPN only”.
+<img width="842" height="610" alt="image" src="https://github.com/user-attachments/assets/45baeb94-482c-45e0-b5f9-aff653c92a2d" />
+
 1.	Once this option is selected, a new window called “Routing and Remote Access” will open.
 
 
@@ -1950,6 +1988,7 @@ In this case, I will select the option “Deploy VPN only”.
 In this case, you can see by the icon with the red arrow that the service is not currently configured and enabled.
 To configure it, we right click on it and select the option “Configure and enable Remote Access”:
 
+<img width="847" height="609" alt="image" src="https://github.com/user-attachments/assets/fdf86262-d1ba-4d59-9b38-654079a3988e" />
 
 
 
@@ -1969,15 +2008,21 @@ Once the wizard is opened, a configuration menu opens where I have to choose a c
 •	Secure connection between two private networks: Sets up a secure connection between two distinct networks, allowing them to communicate securely over the Internet. This is ideal for connecting different branches of a company, creating a private virtual network between them.
 •	Custom configuration: Allows for detailed configuration of remote access services. You can manually select the specific services you want to configure, such as VPN, NAT, routing, dial-up remote access, etc. This option offers the most flexibility to tailor the setup to specific needs.
 In this case, I select the first option (Remote Access), since I am only interested in providing the VPN service:
+<img width="935" height="692" alt="image" src="https://github.com/user-attachments/assets/5de4a426-edea-4d12-9793-39ae2e4e9c6b" />
 
 Then, I select the “VPN” option:
+<img width="948" height="667" alt="image" src="https://github.com/user-attachments/assets/f954da0e-c201-464c-beb3-01cb19a2719f" />
+
 Now, I must select the interface that connects the server to the Internet.
 In this case, it is the “Ethernet” interface, whose IP address is 192.168.0.9:
- 
+ <img width="922" height="708" alt="image" src="https://github.com/user-attachments/assets/fd015702-db21-4852-a28f-f74fb8a84b45" />
+
 Now, I must select whether I want the IP addresses of the computers connecting to the VPN to be assigned automatically (via DHCP) or whether I want an IP address to be chosen from a defined range.
 In this case, I will select the option “From a specified address range”:
 
+<img width="765" height="514" alt="image" src="https://github.com/user-attachments/assets/2d65b5c2-afd5-44ac-9679-64a3bd07dd86" />
 
+<img width="1016" height="737" alt="image" src="https://github.com/user-attachments/assets/c3b5e3a4-f600-4999-8987-c892fe8d49fa" />
 
 
 
@@ -1988,8 +2033,11 @@ In this case, I will select the option “From a specified address range”:
 
 
 In This Case I Choose No, Use Routing and Remote Access to Authenticate Connection Request.
+<img width="951" height="619" alt="image" src="https://github.com/user-attachments/assets/2e7e5c6b-221a-4869-b264-5c52b1d4b280" />
+
 Finally, I check that everything is correct and press “Finish”:
 
+<img width="898" height="584" alt="image" src="https://github.com/user-attachments/assets/5a8604c1-5a65-4313-8fa2-1a3ef8792713" />
 
 
 
@@ -2002,8 +2050,11 @@ Finally, I check that everything is correct and press “Finish”:
 
 
 Once this is done, the VPN server will be running:
+<img width="1015" height="787" alt="image" src="https://github.com/user-attachments/assets/6f331b61-51ab-4f46-9338-bd53716225a5" />
+
 Now, to connect to a VPN from a client computer (in this case, JSS-PC01), I go to the search bar and type VPN.
 Then, I select the “VPN Configuration” option:
+<img width="810" height="594" alt="image" src="https://github.com/user-attachments/assets/d55c26de-dce2-43e5-a97d-bce73fcb7370" />
 
 
 
@@ -2035,7 +2086,8 @@ Then, I select the “Add a VPN connection” option:
 PowerShell is a valuable tool for automating tasks in a Help Desk role because it saves time and reduces manual work. Instead of performing repetitive tasks like resetting passwords or creating user accounts one by one, you can automate these processes with scripts, completing them in seconds. This not only speeds up your workflow but also allows you to handle more requests in less time.
 Automating with PowerShell also ensures consistency and reduces human error. When tasks are done manually, there’s always a risk of mistakes, but a well-written script guarantees the same accurate result every time. This makes PowerShell an essential tool for ensuring that systems are properly managed and maintained.
 Additionally, PowerShell offers flexibility, allowing you to manage different aspects of IT, from Active Directory to software deployment, making it a versatile solution for a wide range of tasks.
- 
+ <img width="312" height="312" alt="image" src="https://github.com/user-attachments/assets/be2505ec-7e89-462c-a80b-11a989db8df1" />
+
 Bulk User creation through Powershell
 Using PowerShell to create users in Active Directory offers key advantages like automation, allowing repetitive tasks to be performed quickly and consistently, ensuring uniformity across the organization. It also provides scalability, making it efficient to manage large numbers of users, and flexibility to customize attributes during creation, all of which help streamline user management in enterprise environments.
 To perform a mass creation of users using Powershell, I must perform the following steps:
@@ -2046,10 +2098,12 @@ This file, as the name of the extension indicates, will separate each Active Dir
 
 
 First, I import the CSV file.
+<img width="1103" height="737" alt="image" src="https://github.com/user-attachments/assets/3f439c6d-d3db-4869-a976-e88276d80ef8" />
 
 Then, I create some variables that will be useful to pass as parameters to the command that will create the users.
 In this case, for testing purposes, all users will go to the same OU, and the domain will be one created on a Windows Server 2019 server, named 'Jssdomain.com'.
 
+<img width="915" height="476" alt="image" src="https://github.com/user-attachments/assets/5b927d1a-b642-4848-a9eb-6789b46c300c" />
 
 
 
@@ -2061,15 +2115,19 @@ In this case, for testing purposes, all users will go to the same OU, and the do
 
 Once the .csv file is loaded in the $users variable, I proceed to go through each one of the users and for each one of them (for Each), I save their data in variables and pass them to the New-AD User object, which will create the users.
 
+<img width="1012" height="999" alt="image" src="https://github.com/user-attachments/assets/f6401602-b2c1-4d4e-9846-a620e6eab484" />
 
+<img width="1015" height="656" alt="image" src="https://github.com/user-attachments/assets/7426fcc0-2f93-4b76-bc88-0c80b023b3d8" />
 
  
+<img width="1005" height="608" alt="image" src="https://github.com/user-attachments/assets/7688076e-7cfd-4054-b159-8e281b47c1bc" />
 
 
 
 
 And the result of executing the script in Active Directory is this (the user 'Raj' was already created)
 
+<img width="1016" height="756" alt="image" src="https://github.com/user-attachments/assets/83acd664-4747-4f4b-9043-7842007e8a03" />
 
 
 
@@ -2080,6 +2138,7 @@ To disable users in PowerShell, the command 'Disable-AD Account' is used.
 In this case, I will disable those users that belong to the 'IT' department.
 The script is simple, since the command only receives the user's identity.
 
+<img width="1016" height="1046" alt="image" src="https://github.com/user-attachments/assets/9c13831d-b72b-4f04-ade4-16b54a63004a" />
 
 
 
@@ -2097,12 +2156,14 @@ This project demonstrates my capabilities in setting up and managing a comprehen
 Tools and Technologies Used:
 1.	Virtualization:
 o	Hyper-V: Used to create and manage multiple virtual machines (VMs), allowing for a dynamic and scalable test environment.
+<img width="313" height="313" alt="image" src="https://github.com/user-attachments/assets/634f9597-f41a-4ba5-a029-2f8c84807e4c" />
 
  
 1.	
 Operating Systems:
 o	Windows Server 2022: Deployed as domain controllers and application servers.
 
+<img width="313" height="313" alt="image" src="https://github.com/user-attachments/assets/e94338ac-41f9-4718-baef-0315611424f2" />
 
 
 
@@ -2111,11 +2172,13 @@ o	Windows Server 2022: Deployed as domain controllers and application servers.
 
 •	Windows 10: Set up as client              machines.
 
+<img width="312" height="313" alt="image" src="https://github.com/user-attachments/assets/12eb7b85-c586-4d9b-998b-4a4ac0e11368" />
 
 
 Directory Services:
 •	Active Directory (AD): Implemented to manage users, groups, and devices across the network.
 
+<img width="313" height="312" alt="image" src="https://github.com/user-attachments/assets/76f07054-94a5-4006-8d17-4f3563d2b934" />
 
 
 
@@ -2125,6 +2188,7 @@ Directory Services:
 Azure Active Directory: Set up for cloud-based identity and access management.
 
 
+<img width="313" height="313" alt="image" src="https://github.com/user-attachments/assets/28c91505-a70f-44f4-8348-eb0153a4f143" />
 
 
 
@@ -2133,6 +2197,7 @@ Azure Active Directory: Set up for cloud-based identity and access management.
 Network and System Management:
 •	PDQ Deploy: Utilized for automated software deployment and management.
 
+<img width="313" height="312" alt="image" src="https://github.com/user-attachments/assets/0c3379c5-afff-451b-a372-993a1c29f66f" />
 
 
 
@@ -2140,11 +2205,13 @@ Network and System Management:
 
 Cloud Services:
 •	Microsoft 365: Implemented and managed user accounts, licenses, and shared mailboxes. Configured services like Exchange, SharePoint, and OneDrive, including recovery of deleted files and mailbox management.
- 
+ <img width="313" height="313" alt="image" src="https://github.com/user-attachments/assets/a776dd67-2e25-4b36-9616-76b52a4baad4" />
+
 Ticketing System:
 •	Jira Service Management (JSM): Adopted to simulate real-world IT ticketing and service management.
 
 
+<img width="312" height="313" alt="image" src="https://github.com/user-attachments/assets/a991eb8e-8fc4-4eff-a8b1-2a6f7b426845" />
 
 
 
@@ -2152,6 +2219,8 @@ Ticketing System:
 
 Remote Access and Support:
 •	TeamViewer: Integrated for remote access and support capabilities, facilitating troubleshooting and user assistance.
+
+<img width="312" height="313" alt="image" src="https://github.com/user-attachments/assets/8bb36a5e-af72-4c54-9c73-0122d02bcb30" />
 
 
 
@@ -2162,10 +2231,12 @@ Remote Access and Support:
 
 VPN Configuration:
 •	Remote Access Role (Windows Server): Set up a VPN to allow secure remote access to the network, including the configuration of roles and client connectivity.
- 
+ <img width="277" height="277" alt="image" src="https://github.com/user-attachments/assets/c85f3659-9a10-48b2-8cdd-12a084ba779f" />
+
 Task Automation:
 •	PowerShell: PowerShell scripts were used to automate key tasks such as bulk user creation and bulk user disabling in Active Directory, improving efficiency and consistency across the project.
- 
+ <img width="280" height="280" alt="image" src="https://github.com/user-attachments/assets/91776bb9-f8cf-4e3a-a33f-d3e6411cf2ac" />
+
 Key Project Components:
 1.	Homelab Setup:
 o	Created a fully functional Homelab consisting of two Windows Server 2022 VMs, four Windows 10 client VMs, and a Linux VM.
